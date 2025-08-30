@@ -2,5 +2,5 @@
 
 This addon depends on:
 
-- [mail](../../../../../oca-ocb-core/odoo-bringout-oca-ocb-mail)
-- [web_kanban_gauge](../../../../../oca-ocb-web/odoo-bringout-oca-ocb-web_kanban_gauge)
+- [mail](https://github.com/bringout/oca-ocb-core)
+- [web_kanban_gauge](https://github.com/bringout/oca-ocb-web)
