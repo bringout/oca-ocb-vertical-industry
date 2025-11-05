@@ -27,7 +27,6 @@ msgstr "2 Tempure, Kupus, Luk, Sezamski sos"
 
 #. module: lunch
 #: model:lunch.order,name:lunch.order_line_5
-#: model:lunch.product,name:lunch.product_4formaggi
 msgid "4 Formaggi"
 msgstr "4 vrste sira"
 
@@ -41,17 +40,19 @@ msgstr "4 Sushi losos - 6 Maki losos - 4 Sashimi losos"
 msgid "6 Maki Salmon - 6 Maki Tuna - 6 Maki Shrimp/Avocado"
 msgstr "6 Maki losos - 6 Maki tuna - 6 Maki škampi/avokado"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid ""
 "<i class=\"fa fa-check\" role=\"img\" aria-label=\"Receive button\" "
 "title=\"Receive button\"/>"
 msgstr ""
+"<i class=\"fa fa-check\" role=\"img\" aria-label=\"Receive button\" "
+"title=\"Gumb zaprimi\"/>"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.view_lunch_cashmove_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.view_lunch_cashmove_report_kanban
 msgid "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Date\"/>"
 msgstr "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Datum\"/>"
 
@@ -61,13 +62,16 @@ msgid ""
 "<i class=\"fa fa-envelope\" role=\"img\" aria-label=\"Send notification\" "
 "title=\"Send notification\"/>"
 msgstr ""
+"<i class=\"fa fa-envelope\" role=\"img\" aria-label=\"Pošalji obavijest\" "
+"title=\"Pošalji obavijest\"/>"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.view_lunch_cashmove_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.view_lunch_cashmove_report_kanban
 msgid "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Amount\" title=\"Amount\"/>"
 msgstr "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Amount\" title=\"Iznos\"/>"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Money\" title=\"Money\"/>"
@@ -79,20 +83,28 @@ msgid ""
 "<i class=\"fa fa-paper-plane\" role=\"img\" aria-label=\"Send button\" "
 "title=\"Send button\"/>"
 msgstr ""
+"<i class=\"fa fa-paper-plane\" role=\"img\" aria-label=\"Dugme za slanje\" "
+"title=\"Dugme za slanje\"/>"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid ""
 "<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Order button\" "
 "title=\"Order button\"/>"
 msgstr ""
+"<i class=\"fa fa-phone\" role=\"img\" aria-label=\"Order button\" "
+"title=\"Gumb naruči\"/>"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid ""
 "<i class=\"fa fa-times\" role=\"img\" aria-label=\"Cancel button\" "
 "title=\"Cancel button\"/>"
 msgstr ""
+"<i class=\"fa fa-times\" role=\"img\" aria-label=\"Cancel button\" "
+"title=\"Gumb otkaži\"/>"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.res_config_settings_view_form
@@ -100,6 +112,8 @@ msgid ""
 "<span class=\"o_form_label\">Lunch Overdraft</span>\n"
 "                                <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
+"<span class=\"o_form_label\">Prekoračenje za ručak</span>\n"
+"                                <span class=\"fa fa-lg fa-building-o\" title=\"Vrijednosti ovdje postavljene su specifične za kompaniju.\" aria-label=\"Vrijednosti ovdje postavljene su specifične za kompaniju.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.res_config_settings_view_form
@@ -107,6 +121,8 @@ msgid ""
 "<span class=\"o_form_label\">Reception notification</span>\n"
 "                                <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
+"<span class=\"o_form_label\">Obavijest o prijemu</span>\n"
+"                                <span class=\"fa fa-lg fa-building-o\" title=\"Vrijednosti ovdje postavljene su specifične za kompaniju.\" aria-label=\"Vrijednosti ovdje postavljene su specifične za kompaniju.\" groups=\"base.group_multi_company\" role=\"img\"/>"
 
 #. module: lunch
 #: model:mail.template,body_html:lunch.lunch_order_mail_supplier
@@ -239,6 +255,133 @@ msgid ""
 "</table>\n"
 "        "
 msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\"><tr><td align=\"center\">\n"
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"<tbody>\n"
+"    <!-- HEADER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\">\n"
+"                    <span style=\"font-size: 10px;\">Narudžba za ručak</span><br>\n"
+"                </td><td valign=\"middle\" align=\"right\">\n"
+"                    <img t-attf-src=\"/logo.png?company={{ user.company_id.id }}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" t-att-alt=\"user.company_id.name\">\n"
+"                </td></tr>\n"
+"                <tr><td colspan=\"2\" style=\"text-align:center;\">\n"
+"                  <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:16px 0px 16px 0px;\">\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- CONTENT -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr>\n"
+"                    <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"    <div>\n"
+"        <t t-set=\"lines\" t-value=\"ctx.get('lines', [])\"></t>\n"
+"        <t t-set=\"order\" t-value=\"ctx.get('order')\"></t>\n"
+"        <t t-set=\"currency\" t-value=\"user.env['res.currency'].browse(order.get('currency_id'))\"></t>\n"
+"        <p>\n"
+"        Dear <t t-out=\"order.get('supplier_name', '')\">Laurie Poiret</t>,\n"
+"        </p><p>\n"
+"        Here is, today orders for <t t-out=\"order.get('company_name', '')\">LunchCompany</t>:\n"
+"        </p>\n"
+"\n"
+"        <t t-if=\"sites\">\n"
+"            <br>\n"
+"            <p>Location</p>\n"
+"            <t t-foreach=\"site\" t-as=\"site\">\n"
+"                <p><t t-out=\"site['name'] or ''\"></t> : <t t-out=\"site['address'] or ''\"></t></p>\n"
+"            </t>\n"
+"            <br>\n"
+"        </t>\n"
+"\n"
+"        <table>\n"
+"            <thead>\n"
+"                <tr style=\"background-color:rgb(233,232,233);\">\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Product</strong></th>\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Comments</strong></th>\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Person</strong></th>\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Site</strong></th>\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Qty</strong></th>\n"
+"                    <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Price</strong></th>\n"
+"                </tr>\n"
+"            </thead>\n"
+"            <tbody>\n"
+"                <tr t-foreach=\"lines\" t-as=\"line\">\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['product'] or ''\">Sushi salmon</td>\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\">\n"
+"                    <t t-if=\"line['toppings']\">\n"
+"                        <t t-out=\"line['toppings'] or ''\">Soy sauce</t>\n"
+"                    </t>\n"
+"                    <t t-if=\"line['note']\">\n"
+"                        <div style=\"color: rgb(173,181,189);\" t-out=\"line['note'] or ''\">With wasabi.</div>\n"
+"                    </t>\n"
+"                    </td>\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['username'] or ''\">lap</td>\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['site'] or ''\">Office 1</td>\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"line['quantity'] or ''\">10</td>\n"
+"                    <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"format_amount(line['price'], currency) or ''\">$ 1.00</td>\n"
+"                </tr>\n"
+"                <tr>\n"
+"                    <td></td>\n"
+"                    <td></td>\n"
+"                    <td></td>\n"
+"                    <td></td>\n"
+"                    <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\"><strong>Total</strong></td>\n"
+"                    <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\" align=\"right\"><strong t-out=\"format_amount(order['amount_total'], currency) or ''\">$ 10.00</strong></td>\n"
+"                </tr>\n"
+"            </tbody>\n"
+"        </table>\n"
+"\n"
+"        <p>Do not hesitate to contact us if you have any questions.</p>\n"
+"    </div>\n"
+"                    </td>\n"
+"                </tr>\n"
+"                <tr>\n"
+"                    <td style=\"text-align:center;\">\n"
+"                        <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\">\n"
+"                    </td>\n"
+"                </tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"    <!-- FOOTER -->\n"
+"    <tr>\n"
+"        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                <tr><td valign=\"middle\" align=\"left\">\n"
+"                    <t t-out=\"user.company_id.name or ''\">YourCompany</t>\n"
+"                </td></tr>\n"
+"                <tr><td valign=\"middle\" align=\"left\" style=\"opacity: 0.7;\">\n"
+"                    <t t-out=\"user.company_id.phone or ''\">+1 650-123-4567</t>\n"
+"                    <t t-if=\"user.company_id.phone and (user.company_id.email or user.company_id.website)\">|</t>\n"
+"                    <t t-if=\"user.company_id.email\">\n"
+"                        <a t-attf-href=\"'mailto:%s' % {{ user.company_id.email }}\" style=\"text-decoration:none; color: #454748;\" t-out=\"user.company_id.email or ''\">info@yourcompany.com</a>\n"
+"                    </t>\n"
+"                    <t t-if=\"user.company_id.email and user.company_id.website\">|</t>\n"
+"                    <t t-if=\"user.company_id.website\">\n"
+"                        <a t-attf-href=\"'%s' % {{ user.company_id.website }}\" style=\"text-decoration:none; color: #454748;\" t-out=\"user.company_id.website or ''\">http://www.example.com</a>\n"
+"                    </t>\n"
+"                </td></tr>\n"
+"            </table>\n"
+"        </td>\n"
+"    </tr>\n"
+"</tbody>\n"
+"</table>\n"
+"</td></tr>\n"
+"<!-- POWERED BY -->\n"
+"<tr><td align=\"center\" style=\"min-width: 590px;\">\n"
+"    <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: #F1F1F1; color: #454748; padding: 8px; border-collapse:separate;\">\n"
+"      <tr><td style=\"text-align: center; font-size: 13px;\">\n"
+"        Powered by <a target=\"_blank\" href=\"https://www.odoo.com\" style=\"color: #875A7B;\">Odoo</a>\n"
+"      </td></tr>\n"
+"    </table>\n"
+"</td></tr>\n"
+"</table>\n"
+"        "
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_cashmove_report_action_control_accounts
@@ -247,62 +390,69 @@ msgid ""
 "            An expense is automatically created at the order receipt.<br>\n"
 "            A payment represents the employee reimbursement to the company."
 msgstr ""
+"Novčani pokret može biti trošak ili plaćanje.<br>\n"
+"Trošak se automatski kreira na primitak narudžbe.<br>\n"
+"Plaćanje predstavlja nadoknadu zaposleniku od kompanije."
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_product_action
-#: model_terms:ir.actions.act_window,help:lunch.lunch_product_action_statbutton
 msgid "A product is defined by its name, category, price and vendor."
 msgstr "<span class=\"o_stat_text\">Balans</span>"
 
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_alert__notification_moment__am
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__moment__am
 msgid "AM"
 msgstr "prijepodne"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_needaction
 msgid "Action Needed"
 msgstr "Potrebna dodatna radnja"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__active
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__active
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__active
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__active
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__active
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_alert_view_search
 msgid "Active"
 msgstr "Aktivan"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_ids
 msgid "Activities"
 msgstr "Aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr "Dekoracija iznimke aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_state
 msgid "Activity State"
 msgstr "Status aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_type_icon
 msgid "Activity Type Icon"
 msgstr "Ikona tipa aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
 msgid "Add To Cart"
-msgstr "Gotovinski pokret može biti ili trošak ili plaćanje.<br>\n                Trošak se automatski kreira pri prijemu narudžbe.<br>\n                Plaćanje predstavlja povraćaj zaposlenom od kompanije."
+msgstr ""
+"Gotovinski pokret može biti ili trošak ili plaćanje.<br>\n"
+"                Trošak se automatski kreira pri prijemu narudžbe.<br>\n"
+"                Plaćanje predstavlja povraćaj zaposlenom od kompanije."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_location__address
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Address"
 msgstr "Adresa"
 
@@ -326,35 +476,30 @@ msgstr "Prethodne narudžbe"
 msgid "Alert in app"
 msgstr "Upozorenje u aplikaciji"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.lunch_alert_menu
 msgid "Alerts"
 msgstr "Upozorenja"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__amount
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__amount
 msgid "Amount"
 msgstr "Iznos"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_alert_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_category_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_form
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_search
 msgid "Archived"
 msgstr "Arhivirano"
 
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_order__available_toppings_1
-#: model:ir.model.fields,help:lunch.field_lunch_order__available_toppings_2
-#: model:ir.model.fields,help:lunch.field_lunch_order__available_toppings_3
 msgid "Are extras available for this product"
 msgstr "Jesu li dodaci dostupni za ovaj proizvod"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_attachment_count
 msgid "Attachment Count"
@@ -365,6 +510,7 @@ msgstr "Broj priloga"
 msgid "Automatic Email Sending Time should be between 0 and 12"
 msgstr "Vrijeme automatskog slanja emaila treba biti između 0 i 12"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Availability"
@@ -373,7 +519,9 @@ msgstr "Raspoloživost"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Available Today"
-msgstr "Upozorenja se koriste za upozoravanje zaposlenih od mogućih problema koji se tiču narudžbi za ručak.\n                Da kreirate upozorenje za ručak morate definisati ponavljanje, vremenski interval tokom kojeg treba da se izvršava upozorenje i poruku za prikaz."
+msgstr ""
+"Upozorenja se koriste za upozoravanje zaposlenih od mogućih problema koji se tiču narudžbi za ručak.\n"
+"                Da kreirate upozorenje za ručak morate definisati ponavljanje, vremenski interval tokom kojeg treba da se izvršava upozorenje i poruku za prikaz."
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__available_toppings_1
@@ -390,27 +538,25 @@ msgstr "Dostupni dodaci 2"
 msgid "Available Toppings 3"
 msgstr "Dostupni dodaci 3"
 
+# taken from hr.po
 #. module: lunch
 #: model:lunch.product,name:lunch.product_bacon
-#: model:lunch.product,name:lunch.product_bacon_0
 msgid "Bacon"
 msgstr "Šunka"
 
 #. module: lunch
 #: model_terms:lunch.product,description:lunch.product_bacon
-#: model_terms:lunch.product,description:lunch.product_bacon_0
 msgid "Beef, Bacon, Salad, Cheddar, Fried Onion, BBQ Sauce"
 msgstr "Govedina, slanina, salata, čedar, prženi luk, BBQ sos"
 
 #. module: lunch
 #: model_terms:lunch.product,description:lunch.product_cheese_burger_0
-#: model_terms:lunch.product,description:lunch.product_cheeseburger
 msgid "Beef, Cheddar, Salad, Fried Onions, BBQ Sauce"
 msgstr "Govedina, čedar, salata, prženi luk, BBQ sos"
 
+# taken from hr.po
 #. module: lunch
 #: model:lunch.order,name:lunch.order_line_1
-#: model:lunch.product,name:lunch.product_Bolognese
 msgid "Bolognese Pasta"
 msgstr "Špageti bolonjez"
 
@@ -424,39 +570,39 @@ msgstr "Brie, med, jezgre oraha"
 msgid "Burger"
 msgstr "Burger"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search_2
 msgid "By Employee"
 msgstr "Po zaposleniku"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_search
 msgid "By User"
 msgstr "Po korisniku"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Cancel"
 msgstr "Po narudžbi"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__cancelled
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Cancelled"
 msgstr "Otkazan"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_supplier.py:0
+#: code:addons/lunch/models/lunch_supplier.py
 #, python-format
 msgid "Cannot send an email to this supplier!"
 msgstr "Nije moguće poslati email ovom dobavljaču!"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_cashmove_action_payment
-#: model:ir.ui.menu,name:lunch.lunch_cashmove_report_menu_payment
 msgid "Cash Moves"
 msgstr "Transakcije gotovine"
 
@@ -465,11 +611,13 @@ msgstr "Transakcije gotovine"
 msgid "Cashmoves report"
 msgstr "Izvještaj o transakcijama gotovine"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Categories"
 msgstr "Po dobavljaču"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Category"
@@ -487,7 +635,6 @@ msgstr "Sir i šunka"
 
 #. module: lunch
 #: model:lunch.product,name:lunch.product_cheese_burger_0
-#: model:lunch.product,name:lunch.product_cheeseburger
 msgid "Cheese Burger"
 msgstr "Cheese Burger"
 
@@ -498,7 +645,6 @@ msgstr "Sir, šunka, salata, paradajz, krastavci, jaja"
 
 #. module: lunch
 #: model:lunch.order,name:lunch.order_line_4
-#: model:lunch.product,name:lunch.product_chicken_curry
 msgid "Chicken Curry"
 msgstr "Piletina Curry"
 
@@ -507,9 +653,9 @@ msgstr "Piletina Curry"
 msgid "Chirashi"
 msgstr "Chirashi"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__city
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "City"
 msgstr "Grad"
 
@@ -520,10 +666,12 @@ msgid ""
 "            Click on the <span class=\"fa fa-check text-success\" title=\"Receive button\"></span> to announce that the order is received.<br>\n"
 "            Click on the <span class=\"fa fa-times-circle text-danger\" title=\"Cancel button\"></span> red X to announce that the order isn't available."
 msgstr ""
+"Kliknite na <span class=\"fa fa-phone text-success\" title=\"Dugme za naručivanje\"></span> da najavite da je narudžba naručena.<br>\n"
+"Kliknite na <span class=\"fa fa-check text-success\" title=\"Dugme za primitak\"></span> da najavite da je narudžba primljena.<br>\n"
+"Kliknite na <span class=\"fa fa-times-circle text-danger\" title=\"Dugme za otkazivanje\"></span> crveni X da najavite da narudžba nije dostupna."
 
 #. module: lunch
 #: model:lunch.product,name:lunch.product_club
-#: model:lunch.product,name:lunch.product_club_0
 msgid "Club"
 msgstr "Klub"
 
@@ -532,26 +680,25 @@ msgstr "Klub"
 msgid "Coca Cola"
 msgstr "Coca Cola"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_company
 msgid "Companies"
 msgstr "Tvrtke"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_location__company_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__company_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__company_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__company_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__company_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__company_id
 msgid "Company"
 msgstr "Kompanija"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_config_settings
 msgid "Config Settings"
 msgstr "Postavke"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.menu_lunch_config
 msgid "Configuration"
@@ -559,15 +706,22 @@ msgstr "Konfiguracija"
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/mixins/lunch_renderer_mixin.js:0
+#: code:addons/lunch/static/src/mixins/lunch_renderer_mixin.js
 #, python-format
 msgid "Configure Your Order"
-msgstr "Kliknite na <span class=\"fa fa-phone text-success\" title=\"Order button\"></span> da najavite da je narudžba naručena.<br>\n                Kliknite na <span class=\"fa fa-check text-success\" title=\"Receive button\"></span> da najavite da je narudžba primljena.<br>\n                Kliknite na <span class=\"fa fa-times-circle text-danger\" title=\"Cancel button\"></span> crveni X da najavite da narudžba nije dostupna."
+msgstr ""
+"Kliknite na <span class=\"fa fa-phone text-success\" title=\"Order button\"></span> da najavite da je narudžba naručena.<br>\n"
+"                Kliknite na <span class=\"fa fa-check text-success\" title=\"Receive button\"></span> da najavite da je narudžba primljena.<br>\n"
+"                Kliknite na <span class=\"fa fa-times-circle text-danger\" title=\"Cancel button\"></span> crveni X da najavite da narudžba nije dostupna."
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Confirm"
-msgstr "Kliknite na <span class=\"fa fa-phone text-success\" title=\"Order button\"></span> da najavite da je narudžba naručena.<br>\n                Kliknite na <span class=\"fa fa-check text-success\" title=\"Receive button\"></span> da najavite da je narudžba primljena.<br>\n                Kliknite na <span class=\"fa fa-times-circle text-danger\" title=\"Cancel button\"></span> da najavite da narudžba nije dostupna."
+msgstr ""
+"Kliknite na <span class=\"fa fa-phone text-success\" title=\"Order button\"></span> da najavite da je narudžba naručena.<br>\n"
+"                Kliknite na <span class=\"fa fa-check text-success\" title=\"Receive button\"></span> da najavite da je narudžba primljena.<br>\n"
+"                Kliknite na <span class=\"fa fa-times-circle text-danger\" title=\"Cancel button\"></span> da najavite da narudžba nije dostupna."
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
@@ -576,19 +730,17 @@ msgstr "Potvrdi narudžbe"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_cashmove_report_action_control_accounts
-#: model:ir.ui.menu,name:lunch.lunch_cashmove_report_menu_control_accounts
 msgid "Control Accounts"
 msgstr "Kontrolni računi"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_order_action_control_suppliers
-#: model:ir.ui.menu,name:lunch.lunch_order_menu_control_suppliers
 msgid "Control Vendors"
 msgstr "Kontrola dobavljača"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__country_id
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Country"
 msgstr "Država"
 
@@ -602,9 +754,9 @@ msgstr "Kreiraj novu uplatu"
 msgid "Create a new product category"
 msgstr "Kreiraj novo upozorenje za ručak"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_product_action
-#: model_terms:ir.actions.act_window,help:lunch.lunch_product_action_statbutton
 msgid "Create a new product for lunch"
 msgstr "Kreiraj novu kategoriju ručka"
 
@@ -613,44 +765,27 @@ msgstr "Kreiraj novu kategoriju ručka"
 msgid "Create new lunch alerts"
 msgstr "Kreiraj nova upozorenja za ručak"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__create_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__create_uid
 msgid "Created by"
 msgstr "Kreirao"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__create_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__create_date
 msgid "Created on"
 msgstr "Kreirano"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__cron_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__cron_id
 msgid "Cron"
 msgstr "Kron"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__currency_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__currency_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__currency_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__currency_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__currency_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__currency_id
-#: model:ir.model.fields,field_description:lunch.field_res_config_settings__currency_id
 msgid "Currency"
 msgstr "Valuta"
 
@@ -659,46 +794,39 @@ msgstr "Valuta"
 msgid "Currently inactive"
 msgstr "Trenutno neaktivno"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__date
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__date
 msgid "Date"
 msgstr "Datum"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__delivery
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__delivery__delivery
 msgid "Delivery"
 msgstr "Otprema"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__description
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__description
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__product_description
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__description
 msgid "Description"
 msgstr "Opis"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
 msgid "Discard"
 msgstr "Odbaci"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__mode
 msgid "Display"
 msgstr "Prikaz"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__display_name
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__display_name
 msgid "Display Name"
 msgstr "Prikazani naziv"
 
@@ -707,6 +835,7 @@ msgstr "Prikazani naziv"
 msgid "Display Reorder Button"
 msgstr "Balans vidljiv"
 
+# taken from hr.po
 #. module: lunch
 #: model:lunch.product.category,name:lunch.categ_drinks
 msgid "Drinks"
@@ -714,14 +843,14 @@ msgstr "Pića"
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Edit order"
 msgstr "Uredi narudžbu"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__email
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__send_by__mail
 msgid "Email"
 msgstr "E-pošta"
 
@@ -740,6 +869,7 @@ msgstr "Zaposlenik koji je naručio prošle sedmice"
 msgid "Employee who ordered last year"
 msgstr "Zaposlenik koji je naručio prošle godine"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_alert__recipients__everyone
 msgid "Everyone"
@@ -747,37 +877,31 @@ msgstr "Svi"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_label_1
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_label_1
 msgid "Extra 1 Label"
 msgstr "Oznaka dodatka 1"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_quantity_1
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_quantity_1
 msgid "Extra 1 Quantity"
 msgstr "Količina dodatka 1"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_label_2
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_label_2
 msgid "Extra 2 Label"
 msgstr "Oznaka dodatka 2"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_quantity_2
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_quantity_2
 msgid "Extra 2 Quantity"
 msgstr "Količina dodatka 2"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_label_3
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_label_3
 msgid "Extra 3 Label"
 msgstr "Oznaka dodatka 3"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__topping_quantity_3
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__topping_quantity_3
 msgid "Extra 3 Quantity"
 msgstr "Količina dodatka 3"
 
@@ -806,21 +930,25 @@ msgstr "Dodaci 3"
 msgid "Favorite Lunch Product"
 msgstr "Omiljeni proizvod za ručak"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__favorite_user_ids
 msgid "Favorite User"
 msgstr "Omiljeni korisnik"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_follower_ids
 msgid "Followers"
 msgstr "Pratitelji"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Pratitelji (Partneri)"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
@@ -831,6 +959,7 @@ msgstr "Font awesome ikona npr. fa-tasks"
 msgid "Format email address \"Name <email@domain>\""
 msgstr "Format email adrese \"Naziv <email@domena>\""
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__email_formatted
 msgid "Formatted Email"
@@ -841,36 +970,40 @@ msgstr "Oblikovani e-mail"
 msgid "Fresh Tomatoes, Basil, Mozzarella"
 msgstr "Svake nedelje"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__fri
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__fri
 msgid "Fri"
 msgstr "Pet"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Friday"
-msgstr "Primer:<br>\n                Ponavljanje: Svakodnevno,<br>\n                Vremenski interval: od 00h00 do 23h59,<br>\n                Poruka: \"Morate naručiti pre 10h30\"."
+msgstr ""
+"Primer:<br>\n"
+"                Ponavljanje: Svakodnevno,<br>\n"
+"                Vremenski interval: od 00h00 do 23h59,<br>\n"
+"                Poruka: \"Morate naručiti pre 10h30\"."
 
+# taken from hr.po
 #. module: lunch
 #: model:lunch.order,name:lunch.order_line_3
-#: model:lunch.product,name:lunch.product_gouda
 msgid "Gouda Cheese"
 msgstr "Gauda sir"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search_2
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Group By"
 msgstr "Osećam se srećno"
 
 #. module: lunch
 #: model_terms:lunch.product,description:lunch.product_club
-#: model_terms:lunch.product,description:lunch.product_club_0
 msgid "Ham, Cheese, Vegetables"
 msgstr "Šunka, sir, povrće"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__has_message
 msgid "Has Message"
@@ -882,6 +1015,9 @@ msgid ""
 "Helps you handle your lunch needs, if you are a manager you will be able to "
 "create new products, cashmoves and to confirm or cancel orders."
 msgstr ""
+"Pomaže vam u upravljanju potrebama za ručak; ako ste menadžer, moći ćete "
+"kreirati nove proizvode, transakcije gotovine te potvrđivati ili otkazivati "
+"narudžbe."
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_product_category_action
@@ -899,56 +1035,53 @@ msgid ""
 "Here you can see your cash moves.<br>A cash move can either be an expense or a payment.\n"
 "            An expense is automatically created when an order is received while a payment is a reimbursement to the company encoded by the manager."
 msgstr ""
+"Ovdje možete vidjeti svoje novčane pokrete.<br>Novčani pokret može biti trošak ili plaćanje.\n"
+"Trošak se automatski kreira kada se narudžba primi dok plaćanje predstavlja nadoknadu kompaniji koju unosi menadžer."
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__id
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__id
 msgid "ID"
 msgstr "ID"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_exception_icon
 msgid "Icon"
 msgstr "Ikona"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr "Ikona za prikaz iznimki."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__message_needaction
 msgid "If checked, new messages require your attention."
 msgstr "Ako je označeno, nove poruke zahtijevaju Vašu pažnju."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__message_has_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Ako je označeno neke poruke mogu imati grešku u dostavi."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__image_1920
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__image_1920
 msgid "Image"
 msgstr "Ne osećam se bogato"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__image_1024
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__image_1024
 msgid "Image 1024"
 msgstr "Gotovinski pokret"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__image_128
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__image_128
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__image_128
 msgid "Image 128"
 msgstr "Slika 128"
 
@@ -957,22 +1090,24 @@ msgstr "Slika 128"
 msgid "Image 1920"
 msgstr "Slika 1920"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__image_256
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__image_256
 msgid "Image 256"
 msgstr "Maksimalni budžet"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__image_512
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__image_512
 msgid "Image 512"
 msgstr "Slika 512"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
 msgid "Information, allergens, ..."
-msgstr "Ovde možete videti vaše gotovinske pokrete.<br>Gotovinski pokret može biti ili trošak ili plaćanje.\n                Trošak se automatski kreira kada je narudžba primljena dok je plaćanje povraćaj kompaniji kodiran od strane menadžera."
+msgstr ""
+"Ovde možete videti vaše gotovinske pokrete.<br>Gotovinski pokret može biti ili trošak ili plaćanje.\n"
+"                Trošak se automatski kreira kada je narudžba primljena dok je plaćanje povraćaj kompaniji kodiran od strane menadžera."
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__available_today
@@ -984,6 +1119,7 @@ msgstr "Prikazano danas"
 msgid "Is Favorite"
 msgstr "Je omiljeno"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_is_follower
 msgid "Is Follower"
@@ -999,16 +1135,9 @@ msgstr "Je novo"
 msgid "Last Lunch Location"
 msgstr "Posljednja lokacija za ručak"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_location____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_order____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_product____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier____last_update
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping____last_update
 msgid "Last Modified on"
 msgstr "Zadnje mijenjano"
 
@@ -1017,50 +1146,39 @@ msgstr "Zadnje mijenjano"
 msgid "Last Order Date"
 msgstr "Datum posljednje narudžbe"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__write_uid
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__write_uid
 msgid "Last Updated by"
 msgstr "Zadnji ažurirao"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_location__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__write_date
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__write_date
 msgid "Last Updated on"
 msgstr "Zadnje ažurirano"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__location_ids
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__available_location_ids
 msgid "Location"
 msgstr "Lokacija"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_location__name
 msgid "Location Name"
 msgstr "Naziv lokacije"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.lunch_location_menu
 msgid "Locations"
 msgstr "Lokacije"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.module.category,name:lunch.module_lunch_category
-#: model:ir.ui.menu,name:lunch.menu_lunch
-#: model_terms:ir.ui.view,arch_db:lunch.res_config_settings_view_form
 msgid "Lunch"
 msgstr "Ručak"
 
@@ -1076,9 +1194,7 @@ msgstr "Upozorenja za ručak"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_cashmove.py:0
-#: code:addons/lunch/report/lunch_cashmove_report.py:0
-#: model:ir.model,name:lunch.model_lunch_cashmove
+#: code:addons/lunch/models/lunch_cashmove.py
 #, python-format
 msgid "Lunch Cashmove"
 msgstr "Transakcija gotovine za ručak"
@@ -1095,7 +1211,6 @@ msgstr "Lokacija za ručak"
 
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_location_action
-#: model:ir.model,name:lunch.model_lunch_location
 msgid "Lunch Locations"
 msgstr "Registruj gotovinske pokrete"
 
@@ -1116,6 +1231,7 @@ msgstr "Poruka obavijesti za ručak"
 
 #. module: lunch
 #: model:ir.model,name:lunch.model_lunch_order
+#, python-format
 msgid "Lunch Order"
 msgstr "Narudžba za ručak"
 
@@ -1146,7 +1262,7 @@ msgstr "Temaki mix za ručak 3kom"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid "Lunch notification"
 msgstr "Obavijest o ručku"
@@ -1206,16 +1322,19 @@ msgstr "Ručak: pošalji automatski email za Sushi Shop"
 msgid "Lunch: send automatic email to The Corner"
 msgstr "Ručak: Naruči obroke"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Glavni prilog"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_res_config_settings__currency_id
 msgid "Main currency of the company."
 msgstr "Glavna valuta kompanije"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.menu_lunch_admin
 msgid "Manager"
@@ -1231,16 +1350,19 @@ msgstr "Maksimalno dozvoljeno prekoračenje"
 msgid "Maximum overdraft that your employees can reach"
 msgstr "Maksimalno prekoračenje koje vaši zaposlenici mogu dosegnuti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__message
 msgid "Message"
 msgstr "Poruka"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_has_error
 msgid "Message Delivery error"
 msgstr "Greška pri isporuci poruke"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_ids
 msgid "Messages"
@@ -1251,12 +1373,13 @@ msgstr "Poruke"
 msgid "Moment"
 msgstr "Trenutak"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__mon
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__mon
 msgid "Mon"
 msgstr "Pon"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Monday"
@@ -1272,6 +1395,7 @@ msgstr "Mozzarella"
 msgid "Mozzarella, Pesto, Tomatoes"
 msgstr "Mozzarella, pesto, paradajz"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_cashmove_report_action_account
 msgid "My Account"
@@ -1284,15 +1408,16 @@ msgstr "Historija mog računa"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_search
 msgid "My Account grouped"
 msgstr "Moj račun grupirano"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr "Rok za moju aktivnost"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.menu_lunch_title
 msgid "My Lunch"
@@ -1303,15 +1428,15 @@ msgstr "Moj Ručak"
 msgid "My Order History"
 msgstr "Plaćanja zaposlenih"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_order_action
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "My Orders"
 msgstr "Moje narudžbe"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__name
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__name
 msgid "Name"
 msgstr "Naziv"
 
@@ -1320,11 +1445,13 @@ msgstr "Naziv"
 msgid "Napoli Pasta"
 msgstr "Tjestenina Napoli"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.view_lunch_product_kanban_order
 msgid "New"
 msgstr "Novi"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.ui.menu,name:lunch.lunch_order_menu_form
 msgid "New Order"
@@ -1335,21 +1462,25 @@ msgstr "Vaš račun za ručak"
 msgid "New Until"
 msgstr "Novo do"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
 msgstr "Događaj sljedećeg kalendara aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr "Krajnji rok slijedeće aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_summary
 msgid "Next Activity Summary"
 msgstr "Sažetak sljedeće aktivnosti"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_type_id
 msgid "Next Activity Type"
@@ -1367,14 +1498,14 @@ msgstr "Još nema transakcija gotovine"
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/views/no_content_helper.xml:0
+#: code:addons/lunch/static/src/views/no_content_helper.xml
 #, python-format
 msgid "No location found"
 msgstr "Ime/Datum"
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "No lunch location available."
 msgstr "Nema dostupne lokacije za ručak."
@@ -1389,6 +1520,7 @@ msgstr "Još nema narudžbe za ručak"
 msgid "No previous order found"
 msgstr "Nije pronađena prethodna narudžba"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.res_config_settings_view_form
 msgid "None"
@@ -1396,16 +1528,16 @@ msgstr "Ništa"
 
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_1__0_more
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_2__0_more
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_3__0_more
 msgid "None or More"
 msgstr "Nijedan ili više"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Not Received"
 msgstr "Nije primljeno"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__note
 msgid "Notes"
@@ -1436,21 +1568,25 @@ msgstr "Vrijeme obavijesti mora biti između 0 i 12"
 msgid "Notified"
 msgstr "Obaviješten"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Broj akcija"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_has_error_counter
 msgid "Number of errors"
 msgstr "Broj grešaka"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__message_needaction_counter
 msgid "Number of messages requiring action"
 msgstr "Broj poruka koje zahtijevaju aktivnost"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__message_has_error_counter
 msgid "Number of messages with delivery error"
@@ -1458,38 +1594,35 @@ msgstr "Broj poruka sa greškama pri isporuci"
 
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_1__1_more
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_2__1_more
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_3__1_more
 msgid "One or More"
 msgstr "Jedan ili više"
 
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_1__1
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_2__1
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__topping_quantity_3__1
 msgid "Only One"
 msgstr "Samo jedan"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid "Order"
 msgstr "Nalog"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__date
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Order Date"
 msgstr "Datum narudžbe"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__order_deadline_passed
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__order_deadline_passed
 msgid "Order Deadline Passed"
 msgstr "Rok za narudžbu je prošao"
 
+# taken from hr.po
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Order Now"
 msgstr "Samo vaš menadžer ručka otkazuje narudžbe."
@@ -1509,11 +1642,13 @@ msgstr "Naručite svoj ručak"
 msgid "Order lines Tree"
 msgstr "Samo vaš menadžer ručka obrađuje narudžbe."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__ordered
 msgid "Ordered"
 msgstr "Naručeno"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Orders"
@@ -1531,7 +1666,6 @@ msgstr "Prekoračenje"
 
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_alert__notification_moment__pm
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__moment__pm
 msgid "PM"
 msgstr "poslijepodne"
 
@@ -1540,21 +1674,25 @@ msgstr "poslijepodne"
 msgid "Pasta"
 msgstr "Tjestenina"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search
 msgid "Payment"
 msgstr "Plaćanje"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_cashmove_action_payment
 msgid ""
 "Payments are used to register liquidity movements. You can process those "
 "payments by your own means or by using installed facilities."
 msgstr ""
+"Plaćanja se koriste za evidentiranje kretanja likvidnosti. Ta plaćanja "
+"možete obraditi vlastitim sredstvima ili korištenjem instaliranih uređaja."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__phone
-#: model:ir.model.fields.selection,name:lunch.selection__lunch_supplier__send_by__phone
 msgid "Phone"
 msgstr "Telefon"
 
@@ -1570,13 +1708,11 @@ msgstr "Pizza s gljivama"
 
 #. module: lunch
 #: model:lunch.order,name:lunch.order_line_2
-#: model:lunch.product,name:lunch.product_italiana
 msgid "Pizza Italiana"
 msgstr "Pizza Italiana"
 
 #. module: lunch
 #: model:lunch.product,name:lunch.product_margherita
-#: model:lunch.product,name:lunch.product_pizza_0
 msgid "Pizza Margherita"
 msgstr "Pizza Margherita"
 
@@ -1587,7 +1723,7 @@ msgstr "Pizza Vegetariana"
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/views/no_content_helper.xml:0
+#: code:addons/lunch/static/src/views/no_content_helper.xml
 #, python-format
 msgid "Please create a location to start ordering."
 msgstr "Stablo narudžbi"
@@ -1597,57 +1733,56 @@ msgstr "Stablo narudžbi"
 msgid "Please order"
 msgstr "Molimo naručite"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__price
-#: model:ir.model.fields,field_description:lunch.field_lunch_topping__price
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Price"
 msgstr "Cijena"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__product_id
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Product"
 msgstr "Proizvod"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__is_available_at
 msgid "Product Availability"
 msgstr "Dostupnost proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_product_category_action
-#: model:ir.ui.menu,name:lunch.lunch_product_category_menu
 msgid "Product Categories"
-msgstr "Vaše narudžbe"
+msgstr "Kategorije artikala"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_category_view_form
 msgid "Product Categories Form"
 msgstr "Obrazac kategorija proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__category_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__category_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product_category__name
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_category_view_tree
 msgid "Product Category"
 msgstr "Kategorija proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product_category__product_count
 msgid "Product Count"
 msgstr "Broj proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__product_image
 msgid "Product Image"
 msgstr "Slika proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__name
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__name
 msgid "Product Name"
 msgstr "Naziv proizvoda"
 
@@ -1658,17 +1793,14 @@ msgstr "Pretraga proizvoda"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid "Product is no longer available."
 msgstr "Proizvod više nije dostupan."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_product_action
-#: model:ir.actions.act_window,name:lunch.lunch_product_action_statbutton
-#: model:ir.ui.menu,name:lunch.lunch_product_menu
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_category_view_form
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_category_view_kanban
 msgid "Products"
 msgstr "Artikli"
 
@@ -1687,6 +1819,7 @@ msgstr "Kategorija proizvoda:"
 msgid "Products Tree"
 msgstr "Stablo proizvoda"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__quantity
 msgid "Quantity"
@@ -1697,38 +1830,45 @@ msgstr "Prethodna narudžba"
 msgid "Re-order"
 msgstr "Ponovno naruči"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Receive"
 msgstr "Primi"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__confirmed
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Received"
 msgstr "Primljeno"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__recipients
 msgid "Recipients"
 msgstr "Primatelji"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_cashmove_action_payment
 msgid "Register a payment"
-msgstr "Proizvodi od ovog dobavljača <strong>ne mogu</strong> biti naručeni u ovom trenutku."
+msgstr ""
+"Proizvodi od ovog dobavljača <strong>ne mogu</strong> biti naručeni u ovom "
+"trenutku."
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Reset"
 msgstr "Proizvodi od ovog dobavljača mogu biti naručeni u ovom trenutku."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__responsible_id
 msgid "Responsible"
 msgstr "Odgovoran"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_user_id
 msgid "Responsible User"
@@ -1744,28 +1884,31 @@ msgstr "Losos i avokado"
 msgid "Sandwich"
 msgstr "Sendvič"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__sat
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__sat
 msgid "Sat"
 msgstr "Sub"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Saturday"
 msgstr "Subota"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
 msgid "Save"
 msgstr "Spremi"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_alert_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Search"
 msgstr "Pretraži"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid "Send"
@@ -1773,7 +1916,6 @@ msgstr "Pošalji"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Send Notification"
 msgstr "Izaberite proizvod i stavite komentare narudžbe u belešku."
 
@@ -1792,6 +1934,7 @@ msgstr "Izaberite vašu narudžbu"
 msgid "Send this message to your users when their order has been delivered."
 msgstr "Izaberite vašeg dobavljača"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__sent
 msgid "Sent"
@@ -1802,9 +1945,9 @@ msgstr "Poslano"
 msgid "Sent to vendor with the order of the day"
 msgstr "Sent to vendor with the order of the day"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_config_settings_action
-#: model:ir.ui.menu,name:lunch.lunch_settings_menu
 msgid "Settings"
 msgstr "Postavke"
 
@@ -1828,9 +1971,9 @@ msgstr "Prikaži do"
 msgid "Spicy Tuna"
 msgstr "Ljuta tuna"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__state_id
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "State"
 msgstr "Status"
 
@@ -1839,6 +1982,7 @@ msgstr "Status"
 msgid "Status"
 msgstr "Widget prethodne narudžbe"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__activity_state
 msgid ""
@@ -1847,22 +1991,30 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Status baziran na aktivnostima\n"
+"Zakašnjelo: Rok je već prošao\n"
+"Danas: Datum aktivnosti je danas\n"
+"Planirano: Buduće aktivnosti."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__street
 msgid "Street"
 msgstr "Ulica"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Street 2..."
 msgstr "Ulica 2..."
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Street..."
 msgstr "Ulica..."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__street2
 msgid "Street2"
@@ -1873,17 +2025,19 @@ msgstr "Ulica2"
 msgid "Summary of all lunch orders, grouped by vendor and by date."
 msgstr "Sažetak svih narudžbi za ručak, grupiran po dobavljaču i datumu."
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__sun
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__sun
 msgid "Sun"
 msgstr "Ned"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Sunday"
 msgstr "Specifični dan"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_topping__supplier_id
 msgid "Supplier"
@@ -1906,26 +2060,32 @@ msgstr "Country"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_product.py:0
+#: code:addons/lunch/models/lunch_product.py
 #, python-format
 msgid ""
 "The following product categories are archived. You should either unarchive the categories or change the category of the product.\n"
 "%s"
 msgstr ""
+"Sljedeće kategorije proizvoda su arhivirane. Trebali biste ili dearhivirati kategorije ili promijeniti kategoriju proizvoda.\n"
+"%s"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_product.py:0
+#: code:addons/lunch/models/lunch_product.py
 #, python-format
 msgid ""
 "The following suppliers are archived. You should either unarchive the suppliers or change the supplier of the product.\n"
 "%s"
 msgstr ""
+"Sljedeći dobavljači su arhivirani. Trebali biste ili dearhivirati dobavljače ili promijeniti dobavljača proizvoda.\n"
+"%s"
 
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_product_category__product_count
 msgid "The number of products related to this category"
-msgstr "Može biti pozitivno (plaćanje) ili negativno (narudžba ili plaćanje ako korisnik želi da vrati novac)"
+msgstr ""
+"Može biti pozitivno (plaćanje) ili negativno (narudžba ili plaćanje ako "
+"korisnik želi da vrati novac)"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
@@ -1934,14 +2094,14 @@ msgstr "Narudžbe za ovog dobavljača su već poslane."
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_supplier.py:0
+#: code:addons/lunch/models/lunch_supplier.py
 #, python-format
 msgid "The orders have been confirmed!"
 msgstr "Datum vaše narudžbe je u prošlosti."
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_supplier.py:0
+#: code:addons/lunch/models/lunch_supplier.py
 #, python-format
 msgid "The orders have been sent!"
 msgstr "Narudžbe su poslane!"
@@ -1952,11 +2112,12 @@ msgid ""
 "The responsible is the person that will order lunch for everyone. It will be"
 " used as the 'from' when sending the automatic email."
 msgstr ""
+"Odgovorna osoba je ona koja će naručiti ručak za sve. Koristit će se kao "
+"'pošiljatelj' prilikom slanja automatskog emaila."
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid "The vendor related to this order is not available today."
 msgstr "Dobavljač povezan s ovom narudžbom danas nije dostupan."
@@ -1967,6 +2128,8 @@ msgid ""
 "There is no previous order recorded. Click on \"My Lunch\" and then create a"
 " new lunch order."
 msgstr ""
+"Nema zabilježene prethodne narudžbe. Kliknite na \"Moj ručak\" i zatim "
+"kreirajte novu narudžbu za ručak."
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_product_action_order
@@ -1980,27 +2143,28 @@ msgstr "Ovo polje se koristi kako bi se "
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__available_today
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__available_today
 msgid "This is True when if the supplier is available today"
 msgstr "Je narudžba ili plaćanje"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__thu
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__thu
 msgid "Thu"
 msgstr "Čet"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Thursday"
 msgstr "Četvrtak"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__tz
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__tz
 msgid "Timezone"
 msgstr "Između"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__new
 msgid "To Order"
@@ -2009,12 +2173,15 @@ msgstr "Do narudžbe"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_payment_dialog
 msgid "To add some money to your wallet, please contact your lunch manager."
-msgstr "Da biste dodali novac u svoj novčanik, molimo kontaktirajte svog menadžera za ručak."
+msgstr ""
+"Da biste dodali novac u svoj novčanik, molimo kontaktirajte svog menadžera "
+"za ručak."
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_location_action
 msgid "To see some locations, create one using the create button"
-msgstr "Da biste vidjeli lokacije, kreirajte jednu pomoću dugmeta za kreiranje"
+msgstr ""
+"Da biste vidjeli lokacije, kreirajte jednu pomoću dugmeta za kreiranje"
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_product_action_order
@@ -2022,15 +2189,18 @@ msgid ""
 "To see some products, check if your vendors are available today and that you"
 " have configured some products"
 msgstr ""
+"Da biste vidjeli proizvode, provjerite jesu li vaši dobavljači danas "
+"dostupni i jeste li konfigurirali neke proizvode"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "Today"
 msgstr "Danas"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_order_action_by_supplier
-#: model:ir.ui.menu,name:lunch.lunch_order_menu_by_supplier
 msgid "Today's Orders"
 msgstr "Današnje Narudžbe"
 
@@ -2046,7 +2216,6 @@ msgstr "Paradajz, bosiljak"
 
 #. module: lunch
 #: model_terms:lunch.product,description:lunch.product_margherita
-#: model_terms:lunch.product,description:lunch.product_pizza_0
 msgid "Tomatoes, Mozzarella"
 msgstr "Paradajz, mozzarella"
 
@@ -2080,28 +2249,27 @@ msgstr "ID-jevi dodataka 2"
 msgid "Topping Ids 3"
 msgstr "ID-jevi dodataka 3"
 
+# taken from hr.po
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_tree
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_tree_2
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_tree
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Total"
 msgstr "Ukupno"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__price
 msgid "Total Price"
 msgstr "Ukupni iznos"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__tue
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__tue
 msgid "Tue"
 msgstr "Uto"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Tuesday"
@@ -2117,22 +2285,21 @@ msgstr "Tuna"
 msgid "Tuna, Mayonnaise"
 msgstr "Tuna, majoneza"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Može biti narudžba ili plaćanje"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__recurrency_end_date
 msgid "Until"
 msgstr "Do"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_users
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove__user_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_cashmove_report__user_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_order__user_id
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
 msgid "User"
 msgstr "Korisnik"
 
@@ -2141,13 +2308,9 @@ msgstr "Korisnik"
 msgid "User : Order your meal"
 msgstr "Korisnik : Order your meal"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__supplier_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_product__supplier_id
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__partner_id
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "Vendor"
 msgstr "Dobavljač"
 
@@ -2156,82 +2319,92 @@ msgstr "Dobavljač"
 msgid "Vendor Orders by Date"
 msgstr "Narudžbe dobavljača po datumu"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_vendors_action
-#: model:ir.ui.menu,name:lunch.lunch_vendors_menu
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Vendors"
 msgstr "Narudžbe po dobavljaču"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__wed
-#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__wed
 msgid "Wed"
 msgstr "Sri"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Wednesday"
-msgstr "Validirajte narudžbu za jednu valutu u isto vreme da pošaljete emailove (pomešane narudžbe od %s i %s)"
+msgstr ""
+"Validirajte narudžbu za jednu valutu u isto vreme da pošaljete emailove "
+"(pomešane narudžbe od %s i %s)"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/controllers/main.py:0
+#: code:addons/lunch/controllers/main.py
 #, python-format
 msgid ""
 "You are trying to impersonate another user, but this can only be done by a "
 "lunch manager"
 msgstr ""
+"Pokušavate se predstaviti kao drugi korisnik, ali to može učiniti samo "
+"menadžer za ručak"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid "You have to order one and only one %s"
 msgstr "Dobavljač(i) '%s' nije dostupan danas"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid "You should order at least one %s"
 msgstr "Trebali biste naručiti barem jedan %s"
 
+# taken from hr.po
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Your Account"
 msgstr "Napišite poruku koju želite da prikažete tokom definisanog perioda..."
 
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Your Cart ("
 msgstr "Vaša košarica ("
 
+# taken from hr.po
 #. module: lunch
 #. odoo-javascript
-#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, python-format
 msgid "Your Order"
 msgstr "Vaša narudžba"
 
 #. module: lunch
 #. odoo-python
-#: code:addons/lunch/models/lunch_order.py:0
+#: code:addons/lunch/models/lunch_order.py
 #, python-format
 msgid ""
 "Your wallet does not contain enough money to order that. To add some money "
 "to your wallet, please contact your lunch manager."
 msgstr ""
+"Vaš novčanik ne sadrži dovoljno novca za tu narudžbu. Da biste dodali novac "
+"u svoj novčanik, molimo kontaktirajte svog menadžera za ručak."
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_supplier_view_form
 msgid "ZIP"
 msgstr "Poštanski broj"
 
+# taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__zip_code
 msgid "Zip"
@@ -2244,14 +2417,12 @@ msgstr "obrazac upozorenja"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_form
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_form
 msgid "cashmove form"
-msgstr "Vaši omiljeni obroci će biti kreirani na osnovu vaših poslednih narudžbi."
+msgstr ""
+"Vaši omiljeni obroci će biti kreirani na osnovu vaših poslednih narudžbi."
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_tree
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_tree_2
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_tree
 msgid "cashmove tree"
 msgstr "stablo transakcija gotovine"
 
@@ -2272,15 +2443,16 @@ msgstr "transakcija gotovine za ručak"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search
-#: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_view_search
 msgid "lunch employee payment"
 msgstr "uplata zaposlenika za ručak"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_alert_view_kanban
 msgid "on"
 msgstr "na"
 
+# taken from hr.po
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_alert_view_kanban
 msgid "to"
