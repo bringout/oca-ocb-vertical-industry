@@ -409,7 +409,7 @@ msgstr "prijepodne"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_needaction
 msgid "Action Needed"
-msgstr "Potrebna radnja"
+msgstr "Potrebna dodatna radnja"
 
 # taken from hr.po
 #. module: lunch
@@ -427,7 +427,7 @@ msgstr "Aktivnosti"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Dekoracija izuzetka aktivnosti"
+msgstr "Dekoracija iznimke aktivnosti"
 
 # taken from hr.po
 #. module: lunch
@@ -586,13 +586,13 @@ msgstr "Po korisniku"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Po narudžbi"
 
 # taken from hr.po
 #. module: lunch
 #: model:ir.model.fields.selection,name:lunch.selection__lunch_order__state__cancelled
 msgid "Cancelled"
-msgstr "Otkazano"
+msgstr "Otkazan"
 
 #. module: lunch
 #. odoo-python
@@ -696,7 +696,7 @@ msgstr "Kompanija"
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke konfiguracije"
+msgstr "Postavke"
 
 # taken from hr.po
 #. module: lunch
@@ -946,7 +946,7 @@ msgstr "Pratitelji"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Pratitelji (partneri)"
+msgstr "Pratitelji (Partneri)"
 
 # taken from hr.po
 #. module: lunch
@@ -996,7 +996,7 @@ msgstr "Gauda sir"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_search_2
 msgid "Group By"
-msgstr "Grupiši po..."
+msgstr "Osećam se srećno"
 
 #. module: lunch
 #: model_terms:lunch.product,description:lunch.product_club
@@ -1059,7 +1059,7 @@ msgstr "Ikona za prikaz iznimki."
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr "Ako je zakačeno, nove poruke će zahtjevati vašu pažnju"
+msgstr "Ako je označeno, nove poruke zahtijevaju Vašu pažnju."
 
 # taken from hr.po
 #. module: lunch
@@ -1123,7 +1123,7 @@ msgstr "Je omiljeno"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_is_follower
 msgid "Is Follower"
-msgstr "Pratilac"
+msgstr "Je pratitelj"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__is_new
@@ -1139,7 +1139,7 @@ msgstr "Posljednja lokacija za ručak"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena na"
+msgstr "Zadnje mijenjano"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__last_order_date
@@ -1150,13 +1150,13 @@ msgstr "Datum posljednje narudžbe"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_uid
 msgid "Last Updated by"
-msgstr "Zadnje ažuriranje izvršio"
+msgstr "Zadnji ažurirao"
 
 # taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažuriranje na"
+msgstr "Zadnje ažurirano"
 
 # taken from hr.po
 #. module: lunch
@@ -1326,7 +1326,7 @@ msgstr "Ručak: Naruči obroke"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_main_attachment_id
 msgid "Main Attachment"
-msgstr "Glavna zakačka"
+msgstr "Glavni prilog"
 
 # taken from hr.po
 #. module: lunch
@@ -1366,7 +1366,7 @@ msgstr "Greška pri isporuci poruke"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__message_ids
 msgid "Messages"
-msgstr "Nepročitane poruke"
+msgstr "Poruke"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__moment
@@ -1472,13 +1472,13 @@ msgstr "Događaj sljedećeg kalendara aktivnosti"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Krajnji rok za sljedeću aktivnost"
+msgstr "Krajnji rok slijedeće aktivnosti"
 
 # taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_summary
 msgid "Next Activity Summary"
-msgstr "Pregled sljedeće aktivnosti"
+msgstr "Sažetak sljedeće aktivnosti"
 
 # taken from hr.po
 #. module: lunch
@@ -1802,7 +1802,7 @@ msgstr "Proizvod više nije dostupan."
 #. module: lunch
 #: model:ir.actions.act_window,name:lunch.lunch_product_action
 msgid "Products"
-msgstr "Proizvodi"
+msgstr "Artikli"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_form
@@ -1823,7 +1823,7 @@ msgstr "Stablo proizvoda"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__quantity
 msgid "Quantity"
-msgstr "Količina"
+msgstr "Prethodna narudžba"
 
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
@@ -1860,7 +1860,7 @@ msgstr ""
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_tree
 msgid "Reset"
-msgstr "Poništi"
+msgstr "Proizvodi od ovog dobavljača mogu biti naručeni u ovom trenutku."
 
 # taken from hr.po
 #. module: lunch
@@ -1872,7 +1872,7 @@ msgstr "Odgovoran"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_user_id
 msgid "Responsible User"
-msgstr "Odgovorni korisnik"
+msgstr "Odgovorna osoba"
 
 #. module: lunch
 #: model:lunch.product,name:lunch.product_chirashi
@@ -1980,7 +1980,7 @@ msgstr "Status"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__state
 msgid "Status"
-msgstr "Status"
+msgstr "Widget prethodne narudžbe"
 
 # taken from hr.po
 #. module: lunch
@@ -2289,7 +2289,7 @@ msgstr "Tuna, majoneza"
 #. module: lunch
 #: model:ir.model.fields,help:lunch.field_lunch_supplier__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr "Vrsta aktivnosti iznimke na zapisu."
+msgstr "Može biti narudžba ili plaćanje"
 
 # taken from hr.po
 #. module: lunch
