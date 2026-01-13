@@ -111,7 +111,7 @@ msgstr "Kupi članstvo"
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_membership_invoice_view
 msgid "Cancel"
-msgstr "Svi članovi"
+msgstr "Otkaži"
 
 # taken from hr.po
 #. module: membership
@@ -135,7 +135,7 @@ msgstr "Otkazani član"
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_product_search_form_view
 msgid "Category"
-msgstr "Svi ne-članovi"
+msgstr "Kategorija"
 
 # taken from hr.po
 #. module: membership
@@ -273,7 +273,7 @@ msgstr "Od"
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_report_membership_search
 msgid "Group By"
-msgstr "Grupiši po"
+msgstr "Grupiši po..."
 
 # taken from hr.po
 #. module: membership
@@ -383,19 +383,19 @@ msgstr "Stavka dnevnika"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice____last_update
 msgid "Last Modified on"
-msgstr "Zadnje mijenjano"
+msgstr "Zadnja izmjena na"
 
 # taken from hr.po
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnje ažuriranje izvršio"
 
 # taken from hr.po
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnje ažuriranje na"
 
 # taken from hr.po
 #. module: membership

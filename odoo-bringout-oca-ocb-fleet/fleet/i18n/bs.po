@@ -88,7 +88,7 @@ msgstr "Dopuna klime"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_needaction
 msgid "Action Needed"
-msgstr "Potrebna akcija"
+msgstr "Potrebna radnja"
 
 # taken from hr.po
 #. module: fleet
@@ -112,7 +112,7 @@ msgstr "Aktivnosti"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr "Dekoracija iznimke aktivnosti"
+msgstr "Dekoracija izuzetka aktivnosti"
 
 # taken from hr.po
 #. module: fleet
@@ -189,7 +189,7 @@ msgstr "Podrška"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_attachment_count
 msgid "Attachment Count"
-msgstr "Dnevnici dodele"
+msgstr "Broj priloga"
 
 # taken from hr.po
 #. module: fleet
@@ -314,7 +314,7 @@ msgstr "Obračun primitka u naravi"
 #. module: fleet
 #: model_terms:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_view_form
 msgid "Cancel"
-msgstr "Odustani"
+msgstr "Otkaži"
 
 # taken from hr.po
 #. module: fleet
@@ -450,7 +450,7 @@ msgstr "Kompanija"
 #. module: fleet
 #: model:ir.model,name:fleet.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: fleet
@@ -729,7 +729,7 @@ msgstr "Prikazani naziv"
 #. module: fleet
 #: model:ir.model.fields.selection,name:fleet.selection__fleet_vehicle_log_services__state__done
 msgid "Done"
-msgstr "Riješeno"
+msgstr "Dovršeno"
 
 # taken from hr.po
 #. module: fleet
@@ -961,19 +961,19 @@ msgstr "Vozni park: Kreiraj troškove ugovora na osnovu učestalosti troškova"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_follower_ids
 msgid "Followers"
-msgstr "Pratioci"
+msgstr "Pratitelji"
 
 # taken from hr.po
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_partner_ids
 msgid "Followers (Partners)"
-msgstr "Pratioci (Partneri)"
+msgstr "Pratitelji (partneri)"
 
 # taken from hr.po
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr "Datum kada je vozilo registrovano"
+msgstr "Font awesome ikona npr. fa-tasks"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__frame_size
@@ -1038,7 +1038,7 @@ msgstr "Benzin"
 #. module: fleet
 #: model_terms:ir.ui.view,arch_db:fleet.fleet_costs_report_view_search
 msgid "Group By"
-msgstr "Grupiši po"
+msgstr "Grupiši po..."
 
 # taken from hr.po
 #. module: fleet
@@ -1175,7 +1175,7 @@ msgstr "Zamjnea brtve na usisnoj grani"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_is_follower
 msgid "Is Follower"
-msgstr "Je pratilac"
+msgstr "Pratilac"
 
 #. module: fleet
 #: model:fleet.vehicle.tag,name:fleet.vehicle_tag_junior
@@ -1202,7 +1202,7 @@ msgstr "Stanje poslednjeg ugovora"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_service_type____last_update
 msgid "Last Modified on"
-msgstr "Zadnje mijenjano"
+msgstr "Zadnja izmjena na"
 
 # taken from hr.po
 #. module: fleet
@@ -1214,13 +1214,13 @@ msgstr "Zadnja kilometraža"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_service_type__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnje ažuriranje izvršio"
 
 # taken from hr.po
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_service_type__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnje ažuriranje na"
 
 # taken from hr.po
 #. module: fleet
@@ -1332,7 +1332,7 @@ msgstr "Greška pri isporuci poruke"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__message_ids
 msgid "Messages"
-msgstr "Poruke"
+msgstr "Nepročitane poruke"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__model_id
@@ -1435,7 +1435,7 @@ msgstr "Događaj sljedećeg kalendara aktivnosti"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr "Datum registracije"
+msgstr "Krajnji rok za sljedeću aktivnost"
 
 # taken from hr.po
 #. module: fleet
@@ -1530,10 +1530,7 @@ msgstr "Broj poruka koje zahtijevaju aktivnost"
 #. module: fleet
 #: model:ir.model.fields,help:fleet.field_fleet_vehicle__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
-"Logo marke srednje veličine. Automatski se menja veličina na 128x128px "
-"sliku, sa očuvanim odnosom stranica. Koristite ovo polje u form pogledima "
-"ili nekim kanban pogledima."
+msgstr "Broj poruka sa greškama pri isporuci"
 
 # taken from hr.po
 #. module: fleet
