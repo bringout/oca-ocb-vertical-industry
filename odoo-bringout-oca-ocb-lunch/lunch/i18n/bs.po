@@ -1980,7 +1980,7 @@ msgstr "Status"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__state
 msgid "Status"
-msgstr "Widget prethodne narudžbe"
+msgstr "Status"
 
 # taken from hr.po
 #. module: lunch
@@ -2335,9 +2335,7 @@ msgstr "Sri"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_search
 msgid "Wednesday"
-msgstr ""
-"Validirajte narudžbu za jednu valutu u isto vreme da pošaljete emailove "
-"(pomešane narudžbe od %s i %s)"
+msgstr "Wednesday"
 
 #. module: lunch
 #. odoo-python

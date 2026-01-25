@@ -3102,10 +3102,7 @@ msgstr "Prati promjene karme"
 #. module: gamification
 #: model_terms:ir.ui.view,arch_db:gamification.gamification_karma_tracking_view_form
 msgid "Tracking"
-msgstr ""
-"Konfiguracija modela za definiciju %s izgleda neispravna, molimo proverite je.\n"
-"\n"
-"%s nije sačuvan"
+msgstr "Tracking"
 
 #. module: gamification
 #: model:ir.model.fields,field_description:gamification.field_gamification_karma_tracking__tracking_date
