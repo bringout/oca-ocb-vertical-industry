@@ -11,7 +11,7 @@ from odoo.tools.safe_eval import safe_eval, time
 _logger = logging.getLogger(__name__)
 
 
-class Goal(models.Model):
+class GamificationGoal(models.Model):
     """Goal instance for a user
 
     An individual goal for a user on a specified time period"""
@@ -22,7 +22,8 @@ class Goal(models.Model):
     _order = 'start_date desc, end_date desc, definition_id, id'
 
     definition_id = fields.Many2one('gamification.goal.definition', string="Goal Definition", required=True, ondelete="cascade")
-    user_id = fields.Many2one('res.users', string="User", required=True, auto_join=True, ondelete="cascade")
+    user_id = fields.Many2one('res.users', string="User", required=True, bypass_search_access=True, index=True, ondelete="cascade")
+    user_partner_id = fields.Many2one('res.partner', related='user_id.partner_id')
     line_id = fields.Many2one('gamification.challenge.line', string="Challenge Line", ondelete="cascade")
     challenge_id = fields.Many2one(
         related='line_id.challenge_id', store=True, readonly=True, index=True,
@@ -39,12 +40,13 @@ class Goal(models.Model):
         ('inprogress', "In progress"),
         ('reached', "Reached"),
         ('failed', "Failed"),
-        ('canceled', "Canceled"),
+        ('canceled', "Cancelled"),
     ], default='draft', string='State', required=True)
     to_update = fields.Boolean('To update')
     closed = fields.Boolean('Closed goal')
 
     computation_mode = fields.Selection(related='definition_id.computation_mode', readonly=False)
+    color = fields.Integer("Color Index", compute='_compute_color')
     remind_update_delay = fields.Integer(
         "Remind delay", help="The number of days after which the user "
                              "assigned to a manual goal will be reminded. "
@@ -59,6 +61,17 @@ class Goal(models.Model):
     definition_condition = fields.Selection(string="Definition Condition", related='definition_id.condition', readonly=True)
     definition_suffix = fields.Char("Suffix", related='definition_id.full_suffix', readonly=True)
     definition_display = fields.Selection(string="Display Mode", related='definition_id.display_mode', readonly=True)
+
+    @api.depends('end_date', 'last_update', 'state')
+    def _compute_color(self):
+        """Set the color based on the goal's state and completion"""
+        for goal in self:
+            goal.color = 0
+            if (goal.end_date and goal.last_update):
+                if (goal.end_date < goal.last_update) and (goal.state == 'failed'):
+                    goal.color = 2
+                elif (goal.end_date < goal.last_update) and (goal.state == 'reached'):
+                    goal.color = 5
 
     @api.depends('current', 'target_goal', 'definition_id.condition')
     def _get_completion(self):
@@ -150,7 +163,7 @@ class Goal(models.Model):
                         'time': time,
                     }
                     code = definition.compute_code.strip()
-                    safe_eval(code, cxt, mode="exec", nocopy=True)
+                    safe_eval(code, cxt, mode="exec")
                     # the result of the evaluated codeis put in the 'result' local variable, propagated to the context
                     result = cxt.get('result')
                     if isinstance(result, (float, int)):
@@ -185,32 +198,23 @@ class Goal(models.Model):
                             subquery_domain.append((field_date_name, '<=', end_date))
 
                         if definition.computation_mode == 'count':
-                            value_field_name = field_name + '_count'
-                            if field_name == 'id':
-                                # grouping on id does not work and is similar to search anyway
-                                users = Obj.search(subquery_domain)
-                                user_values = [{'id': user.id, value_field_name: 1} for user in users]
-                            else:
-                                user_values = Obj.read_group(subquery_domain, fields=[field_name], groupby=[field_name])
+                            user_values = Obj._read_group(subquery_domain, groupby=[field_name], aggregates=['__count'])
 
                         else:  # sum
                             value_field_name = definition.field_id.name
-                            if field_name == 'id':
-                                user_values = Obj.search_read(subquery_domain, fields=['id', value_field_name])
-                            else:
-                                user_values = Obj.read_group(subquery_domain, fields=[field_name, "%s:sum" % value_field_name], groupby=[field_name])
+                            user_values = Obj._read_group(subquery_domain, groupby=[field_name], aggregates=[f'{value_field_name}:sum'])
 
-                        # user_values has format of read_group: [{'partner_id': 42, 'partner_id_count': 3},...]
+                        # user_values has format of _read_group: [(<partner>, <aggregate>), ...]
                         for goal in [g for g in goals if g.id in query_goals]:
-                            for user_value in user_values:
-                                queried_value = field_name in user_value and user_value[field_name] or False
-                                if isinstance(queried_value, tuple) and len(queried_value) == 2 and isinstance(queried_value[0], int):
-                                    queried_value = queried_value[0]
+                            for field_value, aggregate in user_values:
+                                queried_value = field_value.id if isinstance(field_value, models.Model) else field_value
                                 if queried_value == query_goals[goal.id]:
-                                    new_value = user_value.get(value_field_name, goal.current)
-                                    goals_to_write.update(goal._get_write_values(new_value))
+                                    goals_to_write.update(goal._get_write_values(aggregate))
 
                 else:
+                    field_name = definition.field_id.name
+                    field = Obj._fields.get(field_name)
+                    sum_supported = bool(field) and field.type in {'integer', 'float', 'monetary'}
                     for goal in goals:
                         # eval the domain with user replaced by goal user object
                         domain = safe_eval(definition.domain, {'user': goal.user_id})
@@ -221,10 +225,9 @@ class Goal(models.Model):
                         if goal.end_date and field_date_name:
                             domain.append((field_date_name, '<=', goal.end_date))
 
-                        if definition.computation_mode == 'sum':
-                            field_name = definition.field_id.name
-                            res = Obj.read_group(domain, [field_name], [])
-                            new_value = res and res[0][field_name] or 0.0
+                        if definition.computation_mode == 'sum' and sum_supported:
+                            res = Obj._read_group(domain, [], [f'{field_name}:{definition.computation_mode}'])
+                            new_value = res[0][0] or 0.0
 
                         else:  # computation mode = count
                             new_value = Obj.search_count(domain)
@@ -274,7 +277,7 @@ class Goal(models.Model):
 
     @api.model_create_multi
     def create(self, vals_list):
-        return super(Goal, self.with_context(no_remind_goal=True)).create(vals_list)
+        return super(GamificationGoal, self.with_context(no_remind_goal=True)).create(vals_list)
 
     def write(self, vals):
         """Overwrite the write method to update the last_update field to today
@@ -283,7 +286,7 @@ class Goal(models.Model):
         change, a report is generated
         """
         vals['last_update'] = fields.Date.context_today(self)
-        result = super(Goal, self).write(vals)
+        result = super().write(vals)
         for goal in self:
             if goal.state != "draft" and ('definition_id' in vals or 'user_id' in vals):
                 # avoid drag&drop in kanban view
@@ -332,3 +335,6 @@ class Goal(models.Model):
             return action
 
         return False
+
+    def _mail_get_partner_fields(self, introspect_fields=False):
+        return ['user_partner_id']

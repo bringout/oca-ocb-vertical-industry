@@ -5,7 +5,7 @@
     'version': '1.0',
     'sequence': 160,
     'category': 'Human Resources',
-    'depends': ['mail', 'web_kanban_gauge'],
+    'depends': ['mail'],
     'description': """
 Gamification process
 ====================
@@ -44,5 +44,11 @@ Both goals and badges are flexibles and can be adapted to a large range of modul
         'data/gamification_karma_rank_demo.xml',
         'data/gamification_karma_tracking_demo.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'gamification/static/src/**/*',
+        ],
+    },
+    'author': 'Odoo S.A.',
     'license': 'LGPL-3',
 }

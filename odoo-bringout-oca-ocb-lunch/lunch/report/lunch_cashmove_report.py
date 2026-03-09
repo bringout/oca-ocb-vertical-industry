@@ -1,29 +1,30 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models, tools, _
+from odoo import fields, models, tools, _
 
 
-class CashmoveReport(models.Model):
-    _name = "lunch.cashmove.report"
+class LunchCashmoveReport(models.Model):
+    _name = 'lunch.cashmove.report'
     _description = 'Cashmoves report'
     _auto = False
     _order = "date desc"
 
-    id = fields.Integer('ID')
+    id = fields.Id(string='ID')
     amount = fields.Float('Amount')
     date = fields.Date('Date')
     currency_id = fields.Many2one('res.currency', string='Currency')
     user_id = fields.Many2one('res.users', string='User')
     description = fields.Text('Description')
 
-    def name_get(self):
-        return [(cashmove.id, '%s %s' % (_('Lunch Cashmove'), '#%d' % cashmove.id)) for cashmove in self]
+    def _compute_display_name(self):
+        for cashmove in self:
+            cashmove.display_name = '{} {}'.format(_('Lunch Cashmove'), '#%d' % cashmove.id)
 
     def init(self):
-        tools.drop_view_if_exists(self._cr, self._table)
+        tools.drop_view_if_exists(self.env.cr, self._table)
 
-        self._cr.execute("""
+        self.env.cr.execute("""
             CREATE or REPLACE view %s as (
                 SELECT
                     lc.id as id,

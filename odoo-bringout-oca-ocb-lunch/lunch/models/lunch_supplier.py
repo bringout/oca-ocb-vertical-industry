@@ -9,7 +9,7 @@ from textwrap import dedent
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
-from odoo.osv import expression
+from odoo.fields import Domain
 from odoo.tools import float_round
 
 from odoo.addons.base.models.res_partner import _tz_get
@@ -29,6 +29,7 @@ def float_to_time(hours, moment='am'):
 
 def time_to_float(t):
     return float_round(t.hour + t.minute/60 + t.second/3600, precision_digits=2)
+
 
 class LunchSupplier(models.Model):
     _name = 'lunch.supplier'
@@ -50,7 +51,7 @@ class LunchSupplier(models.Model):
     country_id = fields.Many2one('res.country', related='partner_id.country_id', readonly=False)
     company_id = fields.Many2one('res.company', related='partner_id.company_id', readonly=False, store=True)
 
-    responsible_id = fields.Many2one('res.users', string="Responsible", domain=lambda self: [('groups_id', 'in', self.env.ref('lunch.group_lunch_manager').id)],
+    responsible_id = fields.Many2one('res.users', string="Responsible", domain=lambda self: [('all_group_ids', 'in', self.env.ref('lunch.group_lunch_manager').id)],
                                      default=lambda self: self.env.user,
                                      help="The responsible is the person that will order lunch for everyone. It will be used as the 'from' when sending the automatic email.")
 
@@ -112,20 +113,18 @@ class LunchSupplier(models.Model):
     show_order_button = fields.Boolean(compute='_compute_buttons')
     show_confirm_button = fields.Boolean(compute='_compute_buttons')
 
-    _sql_constraints = [
-        ('automatic_email_time_range',
-         'CHECK(automatic_email_time >= 0 AND automatic_email_time <= 12)',
-         'Automatic Email Sending Time should be between 0 and 12'),
-    ]
+    _automatic_email_time_range = models.Constraint(
+        'CHECK(automatic_email_time >= 0 AND automatic_email_time <= 12)',
+        'Automatic Email Sending Time should be between 0 and 12',
+    )
 
-    def name_get(self):
-        res = []
+    @api.depends('phone')
+    def _compute_display_name(self):
         for supplier in self:
             if supplier.phone:
-                res.append((supplier.id, '%s %s' % (supplier.name, supplier.phone)))
+                supplier.display_name = f'{supplier.name} {supplier.phone}'
             else:
-                res.append((supplier.id, supplier.name))
-        return res
+                supplier.display_name = supplier.name
 
     def _sync_cron(self):
         for supplier in self:
@@ -165,8 +164,6 @@ class LunchSupplier(models.Model):
                 'active': False,
                 'interval_type': 'days',
                 'interval_number': 1,
-                'numbercall': -1,
-                'doall': False,
                 'name': "Lunch: send automatic email",
                 'model_id': self.env['ir.model']._get_id(self._name),
                 'state': 'code',
@@ -189,40 +186,50 @@ class LunchSupplier(models.Model):
         suppliers._sync_cron()
         return suppliers
 
-    def write(self, values):
+    def write(self, vals):
+        values = vals
         for topping in values.get('topping_ids_2', []):
-            topping_values = topping[2]
+            topping_values = topping[2] if len(topping) > 2 else False
             if topping_values:
                 topping_values.update({'topping_category': 2})
         for topping in values.get('topping_ids_3', []):
-            topping_values = topping[2]
+            topping_values = topping[2] if len(topping) > 2 else False
             if topping_values:
                 topping_values.update({'topping_category': 3})
         if values.get('company_id'):
             self.env['lunch.order'].search([('supplier_id', 'in', self.ids)]).write({'company_id': values['company_id']})
-        super().write(values)
+        res = super().write(values)
+        if 'active' in values:
+            active_suppliers = self.filtered(lambda s: s.active)
+            inactive_suppliers = self - active_suppliers
+            Product = self.env['lunch.product'].with_context(active_test=False)
+            Product.search([('supplier_id', 'in', active_suppliers.ids)]).write({'active': True})
+            Product.search([('supplier_id', 'in', inactive_suppliers.ids)]).write({'active': False})
         if not CRON_DEPENDS.isdisjoint(values):
             # flush automatic_email_time field to call _sql_constraints
             if 'automatic_email_time' in values:
                 self.flush_model(['automatic_email_time'])
             self._sync_cron()
+        days_removed = [val for val in values if val in ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') and not values[val]]
+        if days_removed:
+            self._cancel_future_days(days_removed)
+        return res
 
     def unlink(self):
         crons = self.cron_id.sudo()
         server_actions = crons.ir_actions_server_id
-        super().unlink()
+        res = super().unlink()
         crons.unlink()
         server_actions.unlink()
-
-    def toggle_active(self):
-        """ Archiving related lunch product """
-        res = super().toggle_active()
-        active_suppliers = self.filtered(lambda s: s.active)
-        inactive_suppliers = self - active_suppliers
-        Product = self.env['lunch.product'].with_context(active_test=False)
-        Product.search([('supplier_id', 'in', active_suppliers.ids)]).write({'active': True})
-        Product.search([('supplier_id', 'in', inactive_suppliers.ids)]).write({'active': False})
         return res
+
+    def _cancel_future_days(self, weekdays):
+        weekdays_n = [WEEKDAY_TO_NAME.index(wd) for wd in weekdays]
+        self.env['lunch.order'].search([
+            ('supplier_id', 'in', self.ids),
+            ('state', 'in', ('new', 'ordered')),
+            ('date', '>=', fields.Date.context_today(self.with_context(tz=self.tz))),
+        ]).filtered(lambda lo: lo.date.weekday() in weekdays_n).write({'state': 'cancelled'})
 
     def _get_current_orders(self, state='ordered'):
         """ Returns today's orders """
@@ -234,7 +241,7 @@ class LunchSupplier(models.Model):
             ('supplier_id', 'in', available_today.ids),
             ('state', '=', state),
             ('date', '=', fields.Date.context_today(self.with_context(tz=self.tz))),
-        ], order="user_id, name")
+        ], order="user_id, product_id")
         return orders
 
     def _send_auto_email(self):
@@ -290,9 +297,8 @@ class LunchSupplier(models.Model):
         now = fields.Datetime.now().replace(tzinfo=pytz.UTC)
 
         for supplier in self:
-            now = now.astimezone(pytz.timezone(supplier.tz))
-
-            supplier.available_today = supplier._available_on_date(now)
+            supplier_date = now.astimezone(pytz.timezone(supplier.tz))
+            supplier.available_today = supplier._available_on_date(supplier_date)
 
     def _available_on_date(self, date):
         self.ensure_one()
@@ -315,23 +321,17 @@ class LunchSupplier(models.Model):
                 supplier.order_deadline_passed = not supplier.available_today
 
     def _search_available_today(self, operator, value):
-        if (not operator in ['=', '!=']) or (not value in [True, False]):
-            return []
+        if operator not in ('in', 'not in'):
+            return NotImplemented
 
-        searching_for_true = (operator == '=' and value) or (operator == '!=' and not value)
+        today = fields.Date.context_today(self)
+        fieldname = WEEKDAY_TO_NAME[today.weekday()]
+        truth = operator == 'in'
 
-        now = fields.Datetime.now().replace(tzinfo=pytz.UTC).astimezone(pytz.timezone(self.env.user.tz or 'UTC'))
-        fieldname = WEEKDAY_TO_NAME[now.weekday()]
+        recurrency_domain = Domain('recurrency_end_date', '=', False) \
+            | Domain('recurrency_end_date', '>' if truth else '<', today)
 
-        recurrency_domain = expression.OR([
-            [('recurrency_end_date', '=', False)],
-            [('recurrency_end_date', '>' if searching_for_true else '<', now)]
-        ])
-
-        return expression.AND([
-            recurrency_domain,
-            [(fieldname, operator, value)]
-        ])
+        return recurrency_domain & Domain(fieldname, operator, value)
 
     def _compute_buttons(self):
         self.env.cr.execute("""
