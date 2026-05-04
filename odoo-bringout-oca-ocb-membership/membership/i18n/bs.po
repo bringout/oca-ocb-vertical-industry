@@ -111,7 +111,7 @@ msgstr "Kupi članstvo"
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_membership_invoice_view
 msgid "Cancel"
-msgstr "Svi članovi"
+msgstr "Otkaži"
 
 # taken from hr.po
 #. module: membership
@@ -219,7 +219,7 @@ msgstr "Datum do kojeg članstvo ostaje aktivno"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__display_name
 msgid "Display Name"
-msgstr "Prikazani naziv"
+msgstr "Naziv za prikaz"
 
 # taken from hr.po
 #. module: membership
@@ -231,7 +231,7 @@ msgstr "Zarađeni iznos"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__date_to
 msgid "End Date"
-msgstr "Datum završetka"
+msgstr "Završni datum"
 
 # taken from hr.po
 #. module: membership
@@ -371,19 +371,19 @@ msgstr "Pridruži se članstvu"
 #. module: membership
 #: model:ir.model,name:membership.model_account_move
 msgid "Journal Entry"
-msgstr "Temeljnica"
+msgstr "Stavka dnevnika"
 
 # taken from hr.po
 #. module: membership
 #: model:ir.model,name:membership.model_account_move_line
 msgid "Journal Item"
-msgstr "Stavka dnevnika"
+msgstr "Stavka žurnala"
 
 # taken from hr.po
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice____last_update
 msgid "Last Modified on"
-msgstr "Zadnje mijenjano"
+msgstr "Zadnja izmjena"
 
 # taken from hr.po
 #. module: membership
@@ -570,7 +570,7 @@ msgstr "Partner"
 # taken from hr.po
 #. module: membership
 #. odoo-python
-#: code:addons/membership/models/partner.py
+#: code:addons/membership/models/partner.py:0
 #, python-format
 msgid "Partner doesn't have an address to make the invoice."
 msgstr "Parnter nema adresu za izdavanje računa."
@@ -578,7 +578,7 @@ msgstr "Parnter nema adresu za izdavanje računa."
 # taken from hr.po
 #. module: membership
 #. odoo-python
-#: code:addons/membership/models/partner.py
+#: code:addons/membership/models/partner.py:0
 #, python-format
 msgid "Partner is a free Member."
 msgstr "Partner je besplatan član."
@@ -635,7 +635,7 @@ msgstr "Odaberite ako želite da date besplatno članstvo"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__start_date
 msgid "Start Date"
-msgstr "Datum početka"
+msgstr "Početni Datum"
 
 # taken from hr.po
 #. module: membership
@@ -714,7 +714,7 @@ msgstr "Član na čekanju"
 
 #. module: membership
 #. odoo-python
-#: code:addons/membership/models/partner.py
+#: code:addons/membership/models/partner.py:0
 #, python-format
 msgid "You cannot create recursive associated members."
 msgstr "Ne možete stvoriti rekurzivne pridružene članove."
