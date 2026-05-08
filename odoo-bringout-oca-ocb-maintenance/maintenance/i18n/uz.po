@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-25 18:35+0000\n"
+"POT-Creation-Date: 2026-03-12 18:36+0000\n"
 "PO-Revision-Date: 2025-10-08 18:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,12 +23,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
-#, fuzzy
-msgid "<span class=\"badge text-bg-warning float-end\">Cancelled</span>"
-msgstr "<span class=\"badge text-bg-warning float-end\">Bekor qilingan</span>"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
@@ -82,7 +76,6 @@ msgstr "Harakat talab etiladi"
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__active
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_team__active
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #, fuzzy
 msgid "Active"
 msgstr "Faol"
@@ -100,6 +93,12 @@ msgstr "Faoliyatlar"
 #, fuzzy
 msgid "Activity Exception Decoration"
 msgstr "Faoliyat istisno bezagi"
+
+#. module: maintenance
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_plans_ids
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__activity_plans_ids
+msgid "Activity Plans"
+msgstr ""
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__activity_state
@@ -226,10 +225,10 @@ msgid "Another asset already exists with this serial number!"
 msgstr "Bu seriya raqami bilan boshqa aktiv allaqachon mavjud!"
 
 #. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__archive
-#, fuzzy
-msgid "Archive"
-msgstr "Arxivlash"
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__state__approved
+#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
+msgid "Approved"
+msgstr ""
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_form
@@ -274,22 +273,15 @@ msgid "Attachment Count"
 msgstr "Ilova soni"
 
 #. module: maintenance
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__kanban_state__blocked
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
-#: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
-#, fuzzy
-msgid "Blocked"
-msgstr "Bloklangan"
-
-#. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
 #, fuzzy
 msgid "Cancel"
 msgstr "Bekor qilish"
 
 #. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_kanban
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__state__cancelled
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
+#: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
 #, fuzzy
 msgid "Cancelled"
 msgstr "Bekor qilingan"
@@ -309,6 +301,13 @@ msgstr "Toifa"
 #, fuzzy
 msgid "Category Name"
 msgstr "Toifa nomi"
+
+#. module: maintenance
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__state__changes_requested
+#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
+#: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
+msgid "Changes Requested"
+msgstr ""
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__close_date
@@ -450,12 +449,6 @@ msgid "Dashboard"
 msgstr "Boshqaruv paneli"
 
 #. module: maintenance
-#: model:ir.model.fields,help:maintenance.field_maintenance_request__request_date
-#, fuzzy
-msgid "Date requested for the maintenance to happen"
-msgstr "Texnik xizmat ko‘rsatish uchun so‘ralgan sana"
-
-#. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__schedule_date
 #, fuzzy
 msgid ""
@@ -510,6 +503,7 @@ msgid "Display Name"
 msgstr "Ko‘rsatiluvchi nom"
 
 #. module: maintenance
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__state__done
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
 #, fuzzy
@@ -554,13 +548,6 @@ msgstr "Elektron pochta taxallusi"
 #, fuzzy
 msgid "Email alias for this maintenance team."
 msgstr "Ushbu texnik xizmat ko‘rsatish guruhi uchun elektron pochta taxallusi."
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__email_cc
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
-#, fuzzy
-msgid "Email cc"
-msgstr "Elektron pochta nusxasi"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_team__alias_domain
@@ -733,19 +720,6 @@ msgid "Future Activities"
 msgstr "Kelajak faoliyatlar"
 
 #. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__instruction_google_slide
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__instruction_type__google_slide
-#, fuzzy
-msgid "Google Slide"
-msgstr "Google taqdimot"
-
-#. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
-#, fuzzy
-msgid "Google Slide Link"
-msgstr "Google taqdimot havolasi"
-
-#. module: maintenance
 #: model:maintenance.equipment,name:maintenance.equipment_printer1
 #, fuzzy
 msgid "HP Inkjet printer"
@@ -841,18 +815,12 @@ msgstr ""
 "foydalanuvchilarga avtomatik tarzda yuboriladi"
 
 #. module: maintenance
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__kanban_state__normal
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__state__normal
 #: model:maintenance.stage,name:maintenance.stage_1
-#: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
+#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #, fuzzy
 msgid "In Progress"
 msgstr "Jarayonda"
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__instruction_type
-#, fuzzy
-msgid "Instruction"
-msgstr "Ko‘rsatma"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
@@ -873,18 +841,17 @@ msgid "Internal Notes"
 msgstr "Ichki qaydlar"
 
 #. module: maintenance
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__is_assigned
+msgid "Is Assigned"
+msgstr ""
+
+#. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__message_is_follower
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__message_is_follower
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_team__message_is_follower
 #, fuzzy
 msgid "Is Follower"
 msgstr "Kuzatuvchi"
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__kanban_state
-#, fuzzy
-msgid "Kanban State"
-msgstr "Kanban holati"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__write_uid
@@ -971,12 +938,6 @@ msgstr "MTTR"
 #, fuzzy
 msgid "Maintenance"
 msgstr "Texnik xizmat"
-
-#. module: maintenance
-#: model:ir.ui.menu,name:maintenance.menu_m_request_calendar
-#, fuzzy
-msgid "Maintenance Calendar"
-msgstr "Texnik xizmat taqvimi"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__maintenance_count
@@ -1079,6 +1040,7 @@ msgid "Maintenance Stages"
 msgstr "Texnik xizmat bosqichlari"
 
 #. module: maintenance
+#: model:ir.model,name:maintenance.model_maintenance_team
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__maintenance_team_id
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_mixin__maintenance_team_id
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_view_form
@@ -1089,7 +1051,6 @@ msgstr "Texnik xizmat jamoasi"
 
 #. module: maintenance
 #: model:ir.actions.act_window,name:maintenance.maintenance_dashboard_action
-#: model:ir.model,name:maintenance.model_maintenance_team
 #: model:ir.ui.menu,name:maintenance.menu_maintenance_teams
 #, fuzzy
 msgid "Maintenance Teams"
@@ -1266,12 +1227,6 @@ msgid "Number of Requests"
 msgstr "So‘rovlar soni"
 
 #. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_team__todo_request_count_block
-#, fuzzy
-msgid "Number of Requests Blocked"
-msgstr "To‘xtatilgan so‘rovlar soni"
-
-#. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_team__todo_request_count_date
 #, fuzzy
 msgid "Number of Requests Scheduled"
@@ -1288,6 +1243,11 @@ msgstr "Rejadan tashqari so‘rovlar soni"
 #, fuzzy
 msgid "Number of Requests in High Priority"
 msgstr "Yuqori ustuvorlikdagi so‘rovlar soni"
+
+#. module: maintenance
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_team__todo_request_count_changes_requested
+msgid "Number of Requests with Changes Requested"
+msgstr ""
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__message_has_error_counter
@@ -1314,6 +1274,12 @@ msgid "Number of messages with delivery error"
 msgstr "Yetkazib berilmagan xabarlar soni"
 
 #. module: maintenance
+#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
+#: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
+msgid "Open"
+msgstr ""
+
+#. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_team__alias_force_thread_id
 #, fuzzy
 msgid ""
@@ -1324,6 +1290,11 @@ msgstr ""
 "Barcha kiruvchi xabarlar, hatto ularga javob berilmagan bo‘lsa ham, "
 "biriktirilishi kerak bo‘lgan mavzu (yozuv) ning ixtiyoriy identifikatori. "
 "Agar o‘rnatilsa, bu yangi yozuvlar yaratishni butunlay o‘chiradi"
+
+#. module: maintenance
+#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_equipment__equipment_assign_to__other
+msgid "Other"
+msgstr ""
 
 #. module: maintenance
 #: model:ir.ui.menu,name:maintenance.menu_m_reports_oee
@@ -1339,13 +1310,6 @@ msgstr "Uskunaning umumiy samaradorligi (OEE)"
 #, fuzzy
 msgid "Owner"
 msgstr "Egasi"
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__instruction_pdf
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__instruction_type__pdf
-#, fuzzy
-msgid "PDF"
-msgstr "PDF"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_team__alias_parent_model_id
@@ -1370,16 +1334,6 @@ msgstr ""
 "Taxallusga ega asosiy model. Taxallus ma'lumotnomasiga ega model "
 "alias_model_id bilan berilgan model bo‘lishi shart emas (masalan: loyiha "
 "(asosiy_model) va vazifa (model))"
-
-#. module: maintenance
-#: model:ir.model.fields,help:maintenance.field_maintenance_request__instruction_google_slide
-#, fuzzy
-msgid ""
-"Paste the url of your Google Slide. Make sure the access to the document is "
-"public."
-msgstr ""
-"Google Slide havolasini joylang. Hujjatga kirish huquqi ochiq ekanligiga "
-"ishonch hosil qiling"
 
 #. module: maintenance
 #: model:maintenance.equipment.category,name:maintenance.equipment_phone
@@ -1431,18 +1385,6 @@ msgstr "Mahsulot haqida ma'lumot"
 #, fuzzy
 msgid "Properties"
 msgstr "Xususiyatlar"
-
-#. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
-#, fuzzy
-msgid "Ready"
-msgstr "Tayyor"
-
-#. module: maintenance
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__kanban_state__done
-#, fuzzy
-msgid "Ready for next stage"
-msgstr "Keyingi bosqichga tayyor"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_kanban
@@ -1507,26 +1449,6 @@ msgstr "So‘rov"
 #, fuzzy
 msgid "Request Created"
 msgstr "So‘rov yaratildi"
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__request_date
-#, fuzzy
-msgid "Request Date"
-msgstr "So‘rov sanasi"
-
-#. module: maintenance
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__done
-#: model:ir.model.fields,field_description:maintenance.field_maintenance_stage__done
-#, fuzzy
-msgid "Request Done"
-msgstr "So‘rov bajarildi"
-
-#. module: maintenance
-#. odoo-python
-#: code:addons/maintenance/models/maintenance.py:0
-#, fuzzy
-msgid "Request planned for %s"
-msgstr "%s uchun rejalashtirilgan so‘rov"
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
@@ -1620,15 +1542,6 @@ msgid "Serial Number"
 msgstr "Seriya raqami"
 
 #. module: maintenance
-#: model:ir.model.fields,help:maintenance.field_maintenance_request__archive
-#, fuzzy
-msgid ""
-"Set archive to true to hide the maintenance request without deleting it."
-msgstr ""
-"Texnik xizmat so‘rovini o‘chirmasdan yashirish uchun arxivni \"to‘g‘ri\" "
-"qilib belgilang."
-
-#. module: maintenance
 #: model:ir.actions.act_window,name:maintenance.action_maintenance_configuration
 #: model:ir.ui.menu,name:maintenance.menu_maintenance_config
 #, fuzzy
@@ -1660,6 +1573,11 @@ msgstr "Bosqich"
 #, fuzzy
 msgid "Stages"
 msgstr "Bosqichlar"
+
+#. module: maintenance
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_request__state
+msgid "State"
+msgstr ""
 
 #. module: maintenance
 #: model:mail.message.subtype,name:maintenance.mt_req_status
@@ -1735,7 +1653,6 @@ msgstr "Texnik xodim"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_request__instruction_text
-#: model:ir.model.fields.selection,name:maintenance.selection__maintenance_request__instruction_type__text
 #, fuzzy
 msgid "Text"
 msgstr "Matn"
@@ -1784,7 +1701,6 @@ msgstr ""
 "Bu sana nosozliklar orasidagi o‘rtacha vaqtni hisoblash uchun ishlatiladi."
 
 #. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.maintenance_team_kanban
 #, fuzzy
 msgid "To Do"
@@ -1824,6 +1740,7 @@ msgid "Type of the exception activity on record."
 msgstr "Qaydnomalardagi istisno faoliyat turi."
 
 #. module: maintenance
+#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_kanban
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 #, fuzzy
 msgid "Unassigned"
@@ -1857,10 +1774,9 @@ msgid "Until"
 msgstr "Gacha"
 
 #. module: maintenance
-#: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_form
-#, fuzzy
-msgid "Upload your PDF file."
-msgstr "PDF faylingizni yuklang."
+#: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__equipment_assign_to
+msgid "Used By"
+msgstr ""
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__partner_id

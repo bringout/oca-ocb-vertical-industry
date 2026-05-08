@@ -1,17 +1,18 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-import pytz
-
 from datetime import datetime, time, timedelta
-from freezegun import freeze_time
 from unittest.mock import patch
+from zoneinfo import ZoneInfo
+
+from freezegun import freeze_time
 
 from odoo import fields
-from odoo.tests import common
+from odoo.tests import tagged, common
 
 from odoo.addons.lunch.tests.common import TestsCommon
 
 
+@tagged('at_install', '-post_install')  # LEGACY at_install
 class TestSupplier(TestsCommon):
     def setUp(self):
         super(TestSupplier, self).setUp()
@@ -72,7 +73,7 @@ env['lunch.supplier'].browse([{self.supplier_kothai.id}])._send_auto_email()""")
                 self.assertEqual(
                     list(Supplier._search_available_today('in', [True])),
                     ['&', '|', ('recurrency_end_date', '=', False),
-                        ('recurrency_end_date', '>', value.astimezone(pytz.timezone(self.env.user.tz)).date()),
+                        ('recurrency_end_date', '>', value.astimezone(ZoneInfo(self.env.user.tz)).date()),
                         (dayname, 'in', [True])],
                 )
 
@@ -259,3 +260,20 @@ env['lunch.supplier'].browse([{self.supplier_kothai.id}])._send_auto_email()""")
 
         order.action_order()
         self.assertEqual(order.state, "ordered")
+
+    def test_order_with_vendor_recurrency_end_date(self):
+        """ Test lunch order when vendor have recurrency_end_date field set """
+        self.supplier_pizza_inn.recurrency_end_date = self.monday_1pm.date() + timedelta(days=7)
+
+        # Test _compute_available_today flow (datetime.datetime object)
+        with patch.object(fields.Datetime, 'now', return_value=self.monday_1pm):
+            self.supplier_pizza_inn.invalidate_recordset(['available_today'])
+            self.assertTrue(self.supplier_pizza_inn.available_today)
+
+        # Test _compute_available_on_date flow (datetime.date object)
+        order = self.env['lunch.order'].create({
+            'product_id': self.product_pizza.id,
+            'date': self.monday_1pm.date(),
+            'supplier_id': self.supplier_pizza_inn.id,
+        })
+        self.assertTrue(order.available_on_date)

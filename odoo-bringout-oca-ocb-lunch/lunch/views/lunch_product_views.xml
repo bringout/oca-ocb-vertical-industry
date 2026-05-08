@@ -71,12 +71,14 @@
                 <field name="currency_id" invisible="1"/>
                 <sheet>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
-                    <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
-                    <div class="oe_title">
-                        <label for="name" class="oe-edit-only"/>
-                        <h1>
-                            <field name='name'/>
-                        </h1>
+                    <div class="d-flex flex-column-reverse flex-md-row align-items-center gap-3">
+                        <group class="w-100">
+                            <label for="name" class="d-md-none"/>
+                            <h1>
+                                <field name='name' placeholder="Product's Name"/>
+                            </h1>
+                        </group>
+                        <field name="image_1920" widget="image" class="oe_avatar" options="{'preview_image': 'image_128'}"/>
                     </div>
                     <group>
                         <group>
@@ -231,7 +233,7 @@
                             <field name="image_128" widget="image"/>
                         </aside>
                         <main>
-                            <button class="badge text-bg-primary ms-auto" type="action"
+                            <button class="badge rounded-pill text-bg-primary ms-auto" type="action"
                                 name="%(lunch.lunch_product_action_statbutton)d"
                                 context="{'search_default_category_id': id,'default_category_id': id}"
                                 invisible="product_count == 0">
