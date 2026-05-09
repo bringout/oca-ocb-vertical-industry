@@ -471,7 +471,7 @@ msgstr ""
 # model: code:addons/lunch/static/src/components/lunch_dashboard.xml
 #, []
 msgid "Close"
-msgstr "Amortizovano"
+msgstr "Zatvori"
 
 # model: model:lunch.product,name:lunch.product_club
 #, []

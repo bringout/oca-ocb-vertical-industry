@@ -515,7 +515,7 @@ msgstr "Odaberite da li se usluga odnosi na ugovore, servise vozila ili oboje"
 # model_terms:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_view_form
 #, []
 msgid "Close"
-msgstr "Amortizovano"
+msgstr "Zatvori"
 
 # model:
 # model:ir.model.fields.selection,name:fleet.selection__fleet_vehicle__contract_state__closed
