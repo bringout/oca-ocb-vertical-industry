@@ -586,7 +586,7 @@ msgstr "Po korisniku"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_kanban
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr "Odustani"
 
 # taken from hr.po
 #. module: lunch
@@ -684,7 +684,7 @@ msgstr ""
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_company
 msgid "Companies"
-msgstr "Tvrtke"
+msgstr "Kompanije"
 
 # taken from hr.po
 #. module: lunch
@@ -696,7 +696,7 @@ msgstr "Kompanija"
 #. module: lunch
 #: model:ir.model,name:lunch.model_res_config_settings
 msgid "Config Settings"
-msgstr "Postavke"
+msgstr "Postavke konfiguracije"
 
 # taken from hr.po
 #. module: lunch
@@ -825,7 +825,7 @@ msgstr "Prikaz"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__display_name
 msgid "Display Name"
-msgstr "Naziv za prikaz"
+msgstr "Naziv prikaza"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__display_reorder_button
@@ -1136,7 +1136,7 @@ msgstr "Posljednja lokacija za ručak"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert____last_update
 msgid "Last Modified on"
-msgstr "Zadnja izmjena"
+msgstr "Zadnji put izmijenjeno"
 
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_product__last_order_date
@@ -1147,13 +1147,13 @@ msgstr "Datum posljednje narudžbe"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_uid
 msgid "Last Updated by"
-msgstr "Zadnji ažurirao"
+msgstr "Zadnji put ažurirao"
 
 # taken from hr.po
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_alert__write_date
 msgid "Last Updated on"
-msgstr "Zadnje ažurirano"
+msgstr "Zadnji put ažurirano"
 
 # taken from hr.po
 #. module: lunch
@@ -1538,7 +1538,7 @@ msgstr "Nije primljeno"
 #. module: lunch
 #: model:ir.model.fields,field_description:lunch.field_lunch_order__note
 msgid "Notes"
-msgstr "Bilješke"
+msgstr "Napomene"
 
 #. module: lunch
 #: model_terms:ir.actions.act_window,help:lunch.lunch_order_action_by_supplier
@@ -1897,7 +1897,7 @@ msgstr "Subota"
 #. module: lunch
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_order_view_form
 msgid "Save"
-msgstr "Spremi"
+msgstr "Snimi"
 
 # taken from hr.po
 #. module: lunch
@@ -2693,3 +2693,162 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:lunch.lunch_cashmove_report_view_tree
 msgid "cashmove list"
 msgstr ""
+
+#. module: lunch
+#: model:mail.template,body_html:lunch.lunch_order_mail_supplier
+msgid ""
+"<t>\n"
+"<t t-set=\"lines\" t-value=\"ctx.get('lines', [])\"/>\n"
+"<t t-set=\"order\" t-value=\"ctx.get('order', {})\"/>\n"
+"<t t-set=\"currency\" t-value=\"user.env['res.currency'].browse(order.get('currency_id'))\"/>\n"
+"<p>\n"
+"Dear <t t-out=\"order.get('supplier_name', '')\">Laurie Poiret</t>,\n"
+"</p><p>\n"
+"Here is, today orders for <t t-out=\"order.get('company_name', '')\">LunchCompany</t>:\n"
+"</p>\n"
+"\n"
+"<t t-if=\"sites\">\n"
+"    <br/>\n"
+"    <p>Location</p>\n"
+"    <p t-foreach=\"site\" t-as=\"site\">\n"
+"        <t t-out=\"site['name'] or ''\"/> : <t t-out=\"site['address'] or ''\"/>\n"
+"    </p>\n"
+"    <br/>\n"
+"</t>\n"
+"\n"
+"<table>\n"
+"    <thead>\n"
+"        <tr style=\"background-color:rgb(233,232,233);\">\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Product</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Comments</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Person</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Site</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Qty</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Price</strong></th>\n"
+"        </tr>\n"
+"    </thead>\n"
+"    <tbody>\n"
+"        <tr t-foreach=\"lines\" t-as=\"line\">\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['product'] or ''\">Sushi salmon</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\">\n"
+"            <t t-if=\"line['toppings']\">\n"
+"                <t t-out=\"line['toppings'] or ''\">Soy sauce</t>\n"
+"            </t>\n"
+"            <t t-if=\"line['note']\">\n"
+"                <div style=\"color: rgb(173,181,189);\" t-out=\"line['note'] or ''\">With wasabi.</div>\n"
+"            </t>\n"
+"            </td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['username'] or ''\">lap</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['site'] or ''\">Office 1</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"line['quantity'] or ''\">10</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"format_amount(line['price'], currency) or ''\">$ 1.00</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\"><strong>Total</strong></td>\n"
+"            <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\" align=\"right\"><strong t-out=\"order.get('amount_total') and format_amount(order['amount_total'], currency) or ''\">$ 10.00</strong></td>\n"
+"        </tr>\n"
+"    </tbody>\n"
+"</table>\n"
+"\n"
+"<p>Do not hesitate to contact us if you have any questions.</p>\n"
+"        </t>"
+msgstr ""
+"<t>\n"
+"<t t-set=\"lines\" t-value=\"ctx.get('lines', [])\"/>\n"
+"<t t-set=\"order\" t-value=\"ctx.get('order', {})\"/>\n"
+"<t t-set=\"currency\" t-value=\"user.env['res.currency'].browse(order.get('currency_id'))\"/>\n"
+"<p>\n"
+"Poštovani <t t-out=\"order.get('supplier_name', '')\">Laurie Poiret</t>,\n"
+"</p><p>\n"
+"Evo današnjih narudžbi za <t t-out=\"order.get('company_name', '')\">LunchCompany</t>:\n"
+"</p>\n"
+"\n"
+"<t t-if=\"sites\">\n"
+"    <br/>\n"
+"    <p>Lokacija</p>\n"
+"    <p t-foreach=\"site\" t-as=\"site\">\n"
+"        <t t-out=\"site['name'] or ''\"/> : <t t-out=\"site['address'] or ''\"/>\n"
+"    </p>\n"
+"    <br/>\n"
+"</t>\n"
+"\n"
+"<table>\n"
+"    <thead>\n"
+"        <tr style=\"background-color:rgb(233,232,233);\">\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Proizvod</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Komentari</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Osoba</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\"><strong>Lokacija</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Kol.</strong></th>\n"
+"            <th style=\"width: 100%; min-width: 96px; font-size: 13px;\" align=\"center\"><strong>Cijena</strong></th>\n"
+"        </tr>\n"
+"    </thead>\n"
+"    <tbody>\n"
+"        <tr t-foreach=\"lines\" t-as=\"line\">\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['product'] or ''\">Sushi salmon</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\">\n"
+"            <t t-if=\"line['toppings']\">\n"
+"                <t t-out=\"line['toppings'] or ''\">Soy sauce</t>\n"
+"            </t>\n"
+"            <t t-if=\"line['note']\">\n"
+"                <div style=\"color: rgb(173,181,189);\" t-out=\"line['note'] or ''\">With wasabi.</div>\n"
+"            </t>\n"
+"            </td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['username'] or ''\">lap</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" t-out=\"line['site'] or ''\">Office 1</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"line['quantity'] or ''\">10</td>\n"
+"            <td style=\"width: 100%; font-size: 13px;\" valign=\"top\" align=\"right\" t-out=\"format_amount(line['price'], currency) or ''\">$ 1.00</td>\n"
+"        </tr>\n"
+"        <tr>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td/>\n"
+"            <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\"><strong>Ukupno</strong></td>\n"
+"            <td style=\"width: 100%; font-size: 13px; border-top: 1px solid black;\" align=\"right\"><strong t-out=\"order.get('amount_total') and format_amount(order['amount_total'], currency) or ''\">$ 10.00</strong></td>\n"
+"        </tr>\n"
+"    </tbody>\n"
+"</table>\n"
+"\n"
+"<p>Slobodno nas kontaktirajte ako imate bilo kakvih pitanja.</p>\n"
+"        </t>"
+
+#. module: lunch
+#: model:ir.model.fields,field_description:lunch.field_lunch_supplier__activity_plans_ids
+msgid "Activity Plans"
+msgstr "Planovi aktivnosti"
+
+#. module: lunch
+#: model:ir.model.constraint,message:lunch.constraint_lunch_supplier_automatic_email_time_range
+msgid "Automatic Email Sending Time should be between 0 and 24"
+msgstr "Vrijeme automatskog slanja e-maila treba biti između 0 i 24"
+
+#. module: lunch
+#: model_terms:ir.actions.act_window,help:lunch.lunch_order_action_control_suppliers
+msgid ""
+"Click on the <span class=\"fa fa-phone text-success\" role=\"img\" aria-label=\"Order button\" title=\"Order button\"></span> to announce that the order is ordered.<br>\n"
+"            Click on the <span class=\"fa fa-check text-success\" role=\"img\" aria-label=\"Receive button\" title=\"Receive button\"></span> to announce that the order is received.<br>\n"
+"            Click on the <span class=\"fa fa-times-circle text-danger\" role=\"img\" aria-label=\"Cancel button\" title=\"Cancel button\"></span> red X to announce that the order isn't available."
+msgstr ""
+"Kliknite na <span class=\"fa fa-phone text-success\" role=\"img\" aria-label=\"Dugme naruči\" title=\"Dugme naruči\"></span> da objavite da je narudžba naručena.<br>\n"
+"            Kliknite na <span class=\"fa fa-check text-success\" role=\"img\" aria-label=\"Dugme primi\" title=\"Dugme primi\"></span> da objavite da je narudžba primljena.<br>\n"
+"            Kliknite na <span class=\"fa fa-times-circle text-danger\" role=\"img\" aria-label=\"Dugme otkaži\" title=\"Dugme otkaži\"></span> crveni X da objavite da narudžba nije dostupna."
+
+#. module: lunch
+#: model:ir.model.constraint,message:lunch.constraint_lunch_alert_notification_time_range
+msgid "Notification time must be between 0 and 24"
+msgstr "Vrijeme obavještenja mora biti između 0 i 24"
+
+#. module: lunch
+#: model_terms:ir.ui.view,arch_db:lunch.lunch_product_view_form
+msgid "Product's Name"
+msgstr "Naziv proizvoda"
+
+#. module: lunch
+#: code:addons/lunch/static/src/components/lunch_dashboard.xml:0
+msgid "x"
+msgstr "x"
