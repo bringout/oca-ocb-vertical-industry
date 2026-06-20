@@ -9,13 +9,13 @@ class MembershipInvoice(models.TransientModel):
     _description = "Membership Invoice"
 
     product_id = fields.Many2one('product.product', string='Membership', required=True)
-    member_price = fields.Float(string='Member Price', digits='Product Price', required=True)
+    member_price = fields.Float(string='Member Price', min_display_digits='Product Price', required=True)
 
     @api.onchange('product_id')
     def onchange_product(self):
         """This function returns value of  product's member price based on product id.
         """
-        price_dict = self.product_id.price_compute('list_price')
+        price_dict = self.product_id._price_compute('list_price')
         self.member_price = price_dict.get(self.product_id.id) or False
 
     def membership_invoice(self):
@@ -23,13 +23,14 @@ class MembershipInvoice(models.TransientModel):
 
         search_view_ref = self.env.ref('account.view_account_invoice_filter', False)
         form_view_ref = self.env.ref('account.view_move_form', False)
-        tree_view_ref = self.env.ref('account.view_move_tree', False)
+        list_view_ref = self.env.ref('account.view_move_tree', False)
 
         return  {
             'domain': [('id', 'in', invoice_list.ids)],
             'name': 'Membership Invoices',
             'res_model': 'account.move',
             'type': 'ir.actions.act_window',
-            'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
+            'views': [(list_view_ref.id, 'list'), (form_view_ref.id, 'form')],
             'search_view_id': search_view_ref and [search_view_ref.id],
+            'context': {'default_move_type': 'out_invoice'},
         }

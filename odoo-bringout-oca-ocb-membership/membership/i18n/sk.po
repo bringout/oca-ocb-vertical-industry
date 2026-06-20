@@ -1,27 +1,27 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* membership
-# 
+# * membership
+#
 # Translators:
-# Damian Brencic <brencicdamian12313@gmail.com>, 2022
-# SAKodoo <sak@odoo.com>, 2022
-# Martin Trigaux, 2022
-# Jaroslav Bosansky <jaro.bosansky@ekoenergo.sk>, 2022
-# Rastislav Brencic <rastislav.brencic@azet.sk>, 2022
-# 
+# Wil Odoo, 2024
+#
+# Weblate <noreply-mt-weblate@weblate.org>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 13:32+0000\n"
-"PO-Revision-Date: 2022-09-22 05:53+0000\n"
-"Last-Translator: Rastislav Brencic <rastislav.brencic@azet.sk>, 2022\n"
-"Language-Team: Slovak (https://app.transifex.com/odoo/teams/41243/sk/)\n"
+"POT-Creation-Date: 2025-12-29 18:37+0000\n"
+"PO-Revision-Date: 2026-03-04 17:23+0000\n"
+"Last-Translator: Weblate <noreply-mt-weblate@weblate.org>\n"
+"Language-Team: Slovak <https://translate.odoo.com/projects/odoo-18/"
+"membership/sk/>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: sk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && "
+"n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);\n"
+"X-Generator: Weblate 5.16.1\n"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__num_invoiced
@@ -49,8 +49,10 @@ msgstr ""
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
-msgid "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
-msgstr "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
+msgid ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
+msgstr ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
@@ -144,7 +146,7 @@ msgstr "Skontrolujte či je výrobok spôsobilý pre členstvo."
 #: model:ir.model.fields,field_description:membership.field_report_membership__company_id
 #: model_terms:ir.ui.view,arch_db:membership.view_report_membership_search
 msgid "Company"
-msgstr "Spoločnosť"
+msgstr "Spoločnost"
 
 #. module: membership
 #: model:ir.ui.menu,name:membership.menu_marketing_config_association
@@ -217,7 +219,7 @@ msgstr "Dátum dokedy bude členstvo aktívne"
 #: model:ir.model.fields,field_description:membership.field_membership_membership_line__display_name
 #: model:ir.model.fields,field_description:membership.field_report_membership__display_name
 msgid "Display Name"
-msgstr "Zobrazovaný názov"
+msgstr "Zobrazovaný Názov"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__tot_earned
@@ -242,8 +244,8 @@ msgstr "Dátum ukončenia členstva"
 
 #. module: membership
 #: model:ir.model.constraint,message:membership.constraint_product_template_membership_date_greater
-msgid "Error ! Ending Date cannot be set before Beginning Date."
-msgstr "Chyba! Dátum ukončenia nie je možné nastaviť pred dátumom začatia."
+msgid "Error! Ending Date cannot be set before Beginning Date."
+msgstr ""
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_report_membership_search
@@ -317,7 +319,8 @@ msgid ""
 "-Non Member: A partner who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paying member: A member who has paid the membership fee."
 msgstr ""
@@ -325,7 +328,8 @@ msgstr ""
 "-Nečlen: Partner, ktorý nepožiadal o akékoľvek členstvo.\n"
 "-Zrušený člen: Člen, ktorý zrušil svoje členstvo.\n"
 "-Bývalý člen: Člen, ktorého dátum členstva vypršal.\n"
-"-Čakajúci člen: Člen, ktorý požiadal o členstvo a ktorého faktúra bude vytvorená.\n"
+"-Čakajúci člen: Člen, ktorý požiadal o členstvo a ktorého faktúra bude "
+"vytvorená.\n"
 "-Vyfaktúrovaný člen: Člen, ktorého faktúra bola vytvorená.\n"
 "-Platiaci člen: Člen, ktorý zaplatil členský poplatok."
 
@@ -336,7 +340,8 @@ msgid ""
 "-Non Member: A member who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paid Member: A member who has paid the membership amount."
 msgstr ""
@@ -344,7 +349,8 @@ msgstr ""
 "- Nie je členom: Člen, ktorý nepožiadal o členstvo.\n"
 "- Zrušený člen: člen, ktorý zrušil svoje členstvo.\n"
 "- Starý člen: Člen, ktorého dátum členstva vypršal.\n"
-"- Čakajúci člen: Člen, ktorý požiadal o členstvo a ktorého faktúra sa má vytvoriť.\n"
+"- Čakajúci člen: Člen, ktorý požiadal o členstvo a ktorého faktúra sa má "
+"vytvoriť.\n"
 "- Fakturovaný člen: člen, ktorého faktúra bola vytvorená.\n"
 "- Platený člen: Člen, ktorý zaplatil sumu členstva."
 
@@ -367,13 +373,6 @@ msgstr "Vstup účtovnej knihy"
 #: model:ir.model,name:membership.model_account_move_line
 msgid "Journal Item"
 msgstr "Položka účtovnej knihy"
-
-#. module: membership
-#: model:ir.model.fields,field_description:membership.field_membership_invoice____last_update
-#: model:ir.model.fields,field_description:membership.field_membership_membership_line____last_update
-#: model:ir.model.fields,field_description:membership.field_report_membership____last_update
-msgid "Last Modified on"
-msgstr "Posledná úprava"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__write_uid
@@ -513,7 +512,6 @@ msgstr "Produkty členstva"
 
 #. module: membership
 #: model:ir.actions.server,name:membership.ir_cron_update_membership_ir_actions_server
-#: model:ir.cron,cron_name:membership.ir_cron_update_membership
 msgid "Membership: update memberships"
 msgstr "Členstvo: aktualizujte členstvo"
 
@@ -543,7 +541,8 @@ msgstr "Nečlen"
 #: model_terms:ir.actions.act_window,help:membership.action_membership_members
 msgid ""
 "Odoo helps you easily track all activities related to a member: \n"
-"                  Current Membership Status, Discussions and History of Membership, etc."
+"                  Current Membership Status, Discussions and History of "
+"Membership, etc."
 msgstr ""
 "Odoo vám pomôže ľahko sledovať všetky aktivity súvisiace s členom:\n"
 "Aktuálny stav členstva, diskusie a história členstva, atď."
@@ -570,14 +569,12 @@ msgstr "Partner"
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "Partner doesn't have an address to make the invoice."
 msgstr "Partner nemá adresu na vytvorenie faktúry."
 
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "Partner is a free Member."
 msgstr "Partner má bezplatné členstvo"
 
@@ -654,7 +651,7 @@ msgstr ""
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.report_membership_view_tree
 msgid "Sum of Quantity"
-msgstr ""
+msgstr "Súčet množstva"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_form
@@ -702,6 +699,5 @@ msgstr "Čakajúci člen"
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "You cannot create recursive associated members."
 msgstr "Nemôžete vytvoriť rekurzívnych pridružených členov."

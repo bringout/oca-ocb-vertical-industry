@@ -1,24 +1,29 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* membership
-# 
+# * membership
+#
 # Translators:
-# Martin Trigaux, 2022
-# Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2023
-# 
+# Wil Odoo, 2024
+#
+# Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 13:32+0000\n"
-"PO-Revision-Date: 2022-09-22 05:53+0000\n"
-"Last-Translator: Alina Lisnenko <alina.lisnenko@erp.co.ua>, 2023\n"
-"Language-Team: Ukrainian (https://app.transifex.com/odoo/teams/41243/uk/)\n"
+"POT-Creation-Date: 2025-12-29 18:37+0000\n"
+"PO-Revision-Date: 2026-04-11 09:06+0000\n"
+"Last-Translator: Alina Lisnenko <alina.lisnenko@erp.co.ua>\n"
+"Language-Team: Ukrainian <https://translate.odoo.com/projects/odoo-18/"
+"membership/uk/>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 "
+"? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > "
+"14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % "
+"100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"X-Generator: Weblate 5.16.2\n"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__num_invoiced
@@ -46,8 +51,10 @@ msgstr ""
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
-msgid "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
-msgstr "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
+msgid ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
+msgstr ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
@@ -95,7 +102,7 @@ msgstr "Доданий учасник"
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_report_membership_search
 msgid "Associated Partner"
-msgstr "Асоційований партнер"
+msgstr "Призначений партнер"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_partner_form
@@ -193,13 +200,13 @@ msgstr "Дата, з якої членство стає активним."
 #. module: membership
 #: model:ir.model.fields,help:membership.field_membership_membership_line__date
 msgid "Date on which member has joined the membership"
-msgstr "Дата, коли учасник приєднався до членства."
+msgstr "Дата, коли учасник приєднався до членства"
 
 #. module: membership
 #: model:ir.model.fields,help:membership.field_res_partner__membership_cancel
 #: model:ir.model.fields,help:membership.field_res_users__membership_cancel
 msgid "Date on which membership has been cancelled"
-msgstr "Дата, коли членство було відмінено."
+msgstr "Дата, коли членство було відмінено"
 
 #. module: membership
 #: model:ir.model.fields,help:membership.field_product_product__membership_date_to
@@ -239,9 +246,8 @@ msgstr "Кінцева дата членства"
 
 #. module: membership
 #: model:ir.model.constraint,message:membership.constraint_product_template_membership_date_greater
-msgid "Error ! Ending Date cannot be set before Beginning Date."
-msgstr ""
-"Помилка ! Дата завершення не може бути призначеною перед Датою початку."
+msgid "Error! Ending Date cannot be set before Beginning Date."
+msgstr "Помилка! Кінцева дата не може бути встановлена до дати початку."
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_report_membership_search
@@ -315,7 +321,8 @@ msgid ""
 "-Non Member: A partner who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paying member: A member who has paid the membership fee."
 msgstr ""
@@ -323,7 +330,8 @@ msgstr ""
 "-Не учасник: Учасник, який не підтвердив жодного членства.\n"
 "-Скасований учасник: Учасник, який скасував своє членство.\n"
 "-Старий учасник: Учасник, чиє членство закінчилося.\n"
-"-Учасник, який очікує: Учасник, який підтвердив своє членство і чий рахунок буде створюватися.\n"
+"-Учасник, який очікує: Учасник, який підтвердив своє членство і чий рахунок "
+"буде створюватися.\n"
 "-Рахунок-фактура учасника: Учасник, чий рахунок було створено.\n"
 "-Учасник, що сплачує:Учасник, який сплатив рахунок за членство."
 
@@ -334,7 +342,8 @@ msgid ""
 "-Non Member: A member who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paid Member: A member who has paid the membership amount."
 msgstr ""
@@ -342,7 +351,8 @@ msgstr ""
 "-Учасник: Учасник, який не подав заявку на членство.\n"
 "-Скасований учасник: Учасник, який скасував своє членство.\n"
 "-Старий учасник: Учасник чиє членство закінчилося.\n"
-"-Учасник в очікування: Учасник, який подав заявку на членство, а рахунок-фактура буде створена.\n"
+"-Учасник в очікування: Учасник, який подав заявку на членство, а рахунок-"
+"фактура буде створена.\n"
 "-Учасник з рахунок: Учасник, чий рахунок було створено.\n"
 "-Учасник, що оплатив: Учасник, який оплатив своє членство."
 
@@ -367,13 +377,6 @@ msgid "Journal Item"
 msgstr "Елемент журналу"
 
 #. module: membership
-#: model:ir.model.fields,field_description:membership.field_membership_invoice____last_update
-#: model:ir.model.fields,field_description:membership.field_membership_membership_line____last_update
-#: model:ir.model.fields,field_description:membership.field_report_membership____last_update
-msgid "Last Modified on"
-msgstr "Остання модифікація"
-
-#. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__write_uid
 #: model:ir.model.fields,field_description:membership.field_membership_membership_line__write_uid
 msgid "Last Updated by"
@@ -393,7 +396,7 @@ msgstr "Учасник"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__member_price
 msgid "Member Price"
-msgstr "Ціна учасника"
+msgstr "Ціна участі"
 
 #. module: membership
 #: model:ir.actions.act_window,name:membership.action_membership_members
@@ -511,7 +514,6 @@ msgstr "Товари членства"
 
 #. module: membership
 #: model:ir.actions.server,name:membership.ir_cron_update_membership_ir_actions_server
-#: model:ir.cron,cron_name:membership.ir_cron_update_membership
 msgid "Membership: update memberships"
 msgstr "Членство: оновлення членства"
 
@@ -541,10 +543,12 @@ msgstr "Не учасник"
 #: model_terms:ir.actions.act_window,help:membership.action_membership_members
 msgid ""
 "Odoo helps you easily track all activities related to a member: \n"
-"                  Current Membership Status, Discussions and History of Membership, etc."
+"                  Current Membership Status, Discussions and History of "
+"Membership, etc."
 msgstr ""
 "Odoo допомагає вам легко відстежувати всі дії, пов'язані з членом:\n"
-"                  Поточний статус членства, дискусії та історія членства тощо."
+"                  Поточний статус членства, дискусії та історія членства "
+"тощо."
 
 #. module: membership
 #: model:ir.model.fields.selection,name:membership.selection__membership_membership_line__state__old
@@ -568,14 +572,12 @@ msgstr "Партнер"
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "Partner doesn't have an address to make the invoice."
 msgstr "У партнера немає адреси, щоби виставити рахунок."
 
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "Partner is a free Member."
 msgstr "Партнер - вільний учасник."
 
@@ -701,6 +703,5 @@ msgstr "Учасник в учікування"
 #. module: membership
 #. odoo-python
 #: code:addons/membership/models/partner.py:0
-#, python-format
 msgid "You cannot create recursive associated members."
 msgstr "Ви не можете створювати рекурсивних асоційованих учасників."
