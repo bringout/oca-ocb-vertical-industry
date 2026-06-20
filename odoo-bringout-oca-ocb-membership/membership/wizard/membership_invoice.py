@@ -15,7 +15,7 @@ class MembershipInvoice(models.TransientModel):
     def onchange_product(self):
         """This function returns value of  product's member price based on product id.
         """
-        price_dict = self.product_id.price_compute('list_price')
+        price_dict = self.product_id._price_compute('list_price')
         self.member_price = price_dict.get(self.product_id.id) or False
 
     def membership_invoice(self):
@@ -32,4 +32,5 @@ class MembershipInvoice(models.TransientModel):
             'type': 'ir.actions.act_window',
             'views': [(tree_view_ref.id, 'tree'), (form_view_ref.id, 'form')],
             'search_view_id': search_view_ref and [search_view_ref.id],
+            'context': {'default_move_type': 'out_invoice'},
         }

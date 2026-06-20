@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class Users(models.Model):
     _inherit = 'res.users'
 
-    karma = fields.Integer('Karma', default=0, copy=False)
+    karma = fields.Integer('Karma', compute='_compute_karma', store=True, readonly=False)
     karma_tracking_ids = fields.One2many('gamification.karma.tracking', 'user_id', string='Karma Changes', groups="base.group_system")
     badge_ids = fields.One2many('gamification.badge.user', 'user_id', string='Badges', copy=False)
     gold_badge = fields.Integer('Gold badges count', compute="_get_user_badge_level")
@@ -15,6 +15,33 @@ class Users(models.Model):
     bronze_badge = fields.Integer('Bronze badges count', compute="_get_user_badge_level")
     rank_id = fields.Many2one('gamification.karma.rank', 'Rank')
     next_rank_id = fields.Many2one('gamification.karma.rank', 'Next Rank')
+
+    @api.depends('karma_tracking_ids.new_value')
+    def _compute_karma(self):
+        if self.env.context.get('skip_karma_computation'):
+            # do not need to update the user karma
+            # e.g. during the tracking consolidation
+            return
+
+        self.env['gamification.karma.tracking'].flush_model()
+
+        select_query = """
+            SELECT DISTINCT ON (user_id) user_id, new_value
+              FROM gamification_karma_tracking
+             WHERE user_id = ANY(%(user_ids)s)
+          ORDER BY user_id, tracking_date DESC, id DESC
+        """
+        self.env.cr.execute(select_query, {'user_ids': self.ids})
+
+        user_karma_map = {
+            values['user_id']: values['new_value']
+            for values in self.env.cr.dictfetchall()
+        }
+
+        for user in self:
+            user.karma = user_karma_map.get(user.id, 0)
+
+        self.sudo()._recompute_rank()
 
     @api.depends('badge_ids')
     def _get_user_badge_level(self):
@@ -43,35 +70,98 @@ class Users(models.Model):
     def create(self, values_list):
         res = super(Users, self).create(values_list)
 
-        karma_trackings = []
-        for user in res:
-            if user.karma:
-                karma_trackings.append({'user_id': user.id, 'old_value': 0, 'new_value': user.karma})
-        if karma_trackings:
-            self.env['gamification.karma.tracking'].sudo().create(karma_trackings)
+        self._add_karma_batch({
+            user: {
+                'gain': int(vals['karma']),
+                'old_value': 0,
+                'origin_ref': f'res.users,{self.env.uid}',
+                'reason': _('User Creation'),
+            }
+            for user, vals in zip(res, values_list)
+            if vals.get('karma')
+        })
 
-        res._recompute_rank()
         return res
 
-    def write(self, vals):
-        karma_trackings = []
-        if 'karma' in vals:
-            for user in self:
-                if user.karma != vals['karma']:
-                    karma_trackings.append({'user_id': user.id, 'old_value': user.karma, 'new_value': vals['karma']})
+    def write(self, values):
+        if 'karma' in values:
+            self._add_karma_batch({
+                user: {
+                    'gain': int(values['karma']) - user.karma,
+                    'origin_ref': f'res.users,{self.env.uid}',
+                }
+                for user in self
+                if int(values['karma']) != user.karma
+            })
+        return super().write(values)
 
-        result = super(Users, self).write(vals)
+    def _add_karma(self, gain, source=None, reason=None):
+        self.ensure_one()
+        values = {'gain': gain, 'source': source, 'reason': reason}
+        return self._add_karma_batch({self: values})
 
-        if karma_trackings:
-            self.env['gamification.karma.tracking'].sudo().create(karma_trackings)
-        if 'karma' in vals:
-            self._recompute_rank()
-        return result
+    def _add_karma_batch(self, values_per_user):
+        if not values_per_user:
+            return
 
-    def add_karma(self, karma):
-        for user in self:
-            user.karma += karma
+        create_values = []
+        for user, values in values_per_user.items():
+            origin = values.get('source') or self.env.user
+            reason = values.get('reason') or _('Add Manually')
+            origin_description = f'{origin.display_name} #{origin.id}'
+            old_value = values.get('old_value', user.karma)
+
+            create_values.append({
+                'new_value': old_value + values['gain'],
+                'old_value': old_value,
+                'origin_ref': f'{origin._name},{origin.id}',
+                'reason': f'{reason} ({origin_description})',
+                'user_id': user.id,
+            })
+
+        self.env['gamification.karma.tracking'].sudo().create(create_values)
         return True
+
+    @api.model
+    def _get_user_ids_ranked_by_karma(self, user_domain, from_date=None, to_date=None, limit=30, offset=0):
+        """ Return the list of user_ids satisfying the domain, sorted by their
+        karma gain during the specified period.
+
+        This method is designed for the website leaderboard pagination. It
+        computes the ranking based on the sum of gamification.karma.tracking
+        values within the given dates."""
+
+        where_query = self.env['res.users']._where_calc(user_domain)
+        user_from_clause, user_where_clause, where_clause_params = where_query.get_sql()
+
+        params = []
+        if from_date:
+            date_from_condition = 'AND tracking.tracking_date >= %s::DATE'
+            params.append(from_date)
+        if to_date:
+            date_to_condition = "AND tracking.tracking_date < %s::DATE + interval '1' day"
+            params.append(to_date)
+        params.extend([limit, offset])
+
+        query = """
+            SELECT "res_users".id as user_id
+            FROM %(user_from_clause)s
+            LEFT JOIN "gamification_karma_tracking" as "tracking"
+                ON "res_users".id = "tracking".user_id
+            WHERE %(user_where_clause)s %(date_from_condition)s %(date_to_condition)s
+            GROUP BY "res_users".id
+            ORDER BY COALESCE(SUM("tracking".new_value - "tracking".old_value), 0) DESC, "res_users".id DESC
+            LIMIT %%s OFFSET %%s
+        """ % {
+            'user_from_clause': user_from_clause,
+            'user_where_clause': user_where_clause or (not from_date and not to_date and 'TRUE') or '',
+            'date_from_condition': date_from_condition if from_date else '',
+            'date_to_condition': date_to_condition if to_date else '',
+        }
+
+        self.env.cr.execute(query, tuple(where_clause_params + params))
+        res = self.env.cr.fetchall()
+        return [r[0] for r in res]
 
     def _get_tracking_karma_gain_position(self, user_domain, from_date=None, to_date=None):
         """ Get absolute position in term of gained karma for users. First a ranking
@@ -104,10 +194,10 @@ class Users(models.Model):
 
         params = []
         if from_date:
-            date_from_condition = 'AND tracking.tracking_date::timestamp >= timestamp %s'
+            date_from_condition = 'AND tracking.tracking_date::DATE >= %s::DATE'
             params.append(from_date)
         if to_date:
-            date_to_condition = 'AND tracking.tracking_date::timestamp <= timestamp %s'
+            date_to_condition = 'AND tracking.tracking_date::DATE <= %s::DATE'
             params.append(to_date)
         params.append(tuple(self.ids))
 
@@ -290,10 +380,9 @@ WHERE sub.user_id IN %%s""" % {
 
         if self.next_rank_id:
             return self.next_rank_id
-        elif not self.rank_id:
-            return self.env['gamification.karma.rank'].search([], order="karma_min ASC", limit=1)
         else:
-            return self.env['gamification.karma.rank']
+            domain = [('karma_min', '>', self.rank_id.karma_min)] if self.rank_id else []
+            return self.env['gamification.karma.rank'].search(domain, order="karma_min ASC", limit=1)
 
     def get_gamification_redirection_data(self):
         """
@@ -303,3 +392,18 @@ WHERE sub.user_id IN %%s""" % {
         """
         self.ensure_one()
         return []
+
+    def action_karma_report(self):
+        self.ensure_one()
+
+        return {
+            'name': _('Karma Updates'),
+            'res_model': 'gamification.karma.tracking',
+            'target': 'current',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'tree',
+            'context': {
+                'default_user_id': self.id,
+                'search_default_user_id': self.id,
+            },
+        }

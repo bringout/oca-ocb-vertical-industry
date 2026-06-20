@@ -1,25 +1,26 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* membership
-# 
+# * membership
+#
 # Translators:
-# Martin Trigaux, 2022
+# Wil Odoo, 2023
 # Erwin van der Ploeg <erwin@odooexperts.nl>, 2023
-# Jolien De Paepe, 2023
-# 
+# Bren Driesen <brdri@odoo.com>, 2026.
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 16.0\n"
+"Project-Id-Version: Odoo Server 17.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-06 13:32+0000\n"
-"PO-Revision-Date: 2022-09-22 05:53+0000\n"
-"Last-Translator: Jolien De Paepe, 2023\n"
-"Language-Team: Dutch (https://app.transifex.com/odoo/teams/41243/nl/)\n"
+"POT-Creation-Date: 2025-12-29 18:37+0000\n"
+"PO-Revision-Date: 2026-01-29 08:39+0000\n"
+"Last-Translator: Bren Driesen <brdri@odoo.com>\n"
+"Language-Team: Dutch <https://translate.odoo.com/projects/odoo-17/membership/"
+"nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: nl\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__num_invoiced
@@ -47,8 +48,10 @@ msgstr ""
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
-msgid "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
-msgstr "<i class=\"fa fa-money\" role=\"img\" aria-label=\"Prijs\" title=\"Prijs\"/>"
+msgid ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Price\" title=\"Price\"/>"
+msgstr ""
+"<i class=\"fa fa-money\" role=\"img\" aria-label=\"Prijs\" title=\"Prijs\"/>"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.membership_products_kanban
@@ -240,7 +243,7 @@ msgstr "Einddatum lidmaatschap"
 
 #. module: membership
 #: model:ir.model.constraint,message:membership.constraint_product_template_membership_date_greater
-msgid "Error ! Ending Date cannot be set before Beginning Date."
+msgid "Error! Ending Date cannot be set before Beginning Date."
 msgstr "Fout! De einddatum kan niet voor de begindatum liggen."
 
 #. module: membership
@@ -315,7 +318,8 @@ msgid ""
 "-Non Member: A partner who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paying member: A member who has paid the membership fee."
 msgstr ""
@@ -323,9 +327,11 @@ msgstr ""
 "-Geen lid: Een lid die nog geen lidmaatschap heeft aangevraagd.\n"
 "-Opgezegd lid: Een lid die zijn lidmaatschap heeft opgezegd.\n"
 "-Voormalig lid: Een lid waarvan het lidmaatschap is vervallen.\n"
-"-Wachtend lid: Een lid die lidmaatschap heeft aangevraagd en waarvan de factuur wordt gemaakt.\n"
+"-Wachtend lid: Een lid die lidmaatschap heeft aangevraagd en waarvan de "
+"factuur wordt gemaakt.\n"
 "-Gefactureerd lid: Een lid wiens factuur is gemaakt.\n"
-"                    -Betalend lid: Een lid die zijn lidmaatschap heeft betaald."
+"                    -Betalend lid: Een lid die zijn lidmaatschap heeft "
+"betaald."
 
 #. module: membership
 #: model:ir.model.fields,help:membership.field_membership_membership_line__state
@@ -334,7 +340,8 @@ msgid ""
 "-Non Member: A member who has not applied for any membership.\n"
 "-Cancelled Member: A member who has cancelled his membership.\n"
 "-Old Member: A member whose membership date has expired.\n"
-"-Waiting Member: A member who has applied for the membership and whose invoice is going to be created.\n"
+"-Waiting Member: A member who has applied for the membership and whose "
+"invoice is going to be created.\n"
 "-Invoiced Member: A member whose invoice has been created.\n"
 "-Paid Member: A member who has paid the membership amount."
 msgstr ""
@@ -342,7 +349,8 @@ msgstr ""
 "- Geen lid: Een lid die nog geen lidmaatschap heeft aangevraagd.\n"
 "- Opgezegd lid: Een lid die zijn lidmaatschap heeft opgezegd.\n"
 "- Voormalig lid: Een lid waarvan het lidmaatschap is vervallen.\n"
-"- Wachtend lid: Een lid die lidmaatschap heeft aangevraagd en waarvan de factuur wordt gemaakt.\n"
+"- Wachtend lid: Een lid die lidmaatschap heeft aangevraagd en waarvan de "
+"factuur wordt gemaakt.\n"
 "- Gefactureerd lid: Een lid wiens factuur is gemaakt.\n"
 "- Betalend lid: Een lid die zijn lidmaatschap heeft betaald."
 
@@ -364,14 +372,7 @@ msgstr "Boeking"
 #. module: membership
 #: model:ir.model,name:membership.model_account_move_line
 msgid "Journal Item"
-msgstr "Dagboekitem"
-
-#. module: membership
-#: model:ir.model.fields,field_description:membership.field_membership_invoice____last_update
-#: model:ir.model.fields,field_description:membership.field_membership_membership_line____last_update
-#: model:ir.model.fields,field_description:membership.field_report_membership____last_update
-msgid "Last Modified on"
-msgstr "Laatst gewijzigd op"
+msgstr "Boekingsregel"
 
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_membership_invoice__write_uid
@@ -511,7 +512,6 @@ msgstr "Producten voor leden"
 
 #. module: membership
 #: model:ir.actions.server,name:membership.ir_cron_update_membership_ir_actions_server
-#: model:ir.cron,cron_name:membership.ir_cron_update_membership
 msgid "Membership: update memberships"
 msgstr "Lidmaatschap: update lidmaatschap"
 
@@ -541,10 +541,12 @@ msgstr "Niet-lid"
 #: model_terms:ir.actions.act_window,help:membership.action_membership_members
 msgid ""
 "Odoo helps you easily track all activities related to a member: \n"
-"                  Current Membership Status, Discussions and History of Membership, etc."
+"                  Current Membership Status, Discussions and History of "
+"Membership, etc."
 msgstr ""
 "Odoo laat je toe om gemakkelijk alle activiteiten van leden op te volgen:\n"
-"Huidige status van het lidmaatschap, discussies en geschiedenis van het lidmaatschap, enz."
+"Huidige status van het lidmaatschap, discussies en geschiedenis van het "
+"lidmaatschap, enz."
 
 #. module: membership
 #: model:ir.model.fields.selection,name:membership.selection__membership_membership_line__state__old
@@ -597,7 +599,7 @@ msgstr "Productnaam"
 #. module: membership
 #: model:ir.model.fields,field_description:membership.field_report_membership__quantity
 msgid "Quantity"
-msgstr "Aantal"
+msgstr "Hoeveelheid"
 
 #. module: membership
 #: model:ir.ui.menu,name:membership.menu_report_membership
@@ -627,7 +629,7 @@ msgstr "Selecteer als je een gratis lidmaatschap wilt geven."
 #: model_terms:ir.ui.view,arch_db:membership.membership_product_search_form_view
 #: model_terms:ir.ui.view,arch_db:membership.view_res_partner_member_filter
 msgid "Start Date"
-msgstr "Startdatum"
+msgstr "Begindatum"
 
 #. module: membership
 #: model_terms:ir.ui.view,arch_db:membership.view_res_partner_member_filter
